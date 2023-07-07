@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://c1tiiejfn6a6k"]
+
+[node name="Game" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(960, 540)
+ignore_rotation = false
