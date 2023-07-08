@@ -15,20 +15,25 @@ script = ExtResource("1_lph4c")
 tools = [NodePath("Tool - Jack"), NodePath("Tool - Fire"), NodePath("Tool - Fuel"), NodePath("Tool - Screwdriver"), NodePath("Tool - Tyre"), NodePath("Tool - Wiper")]
 
 [node name="Tool - Jack" parent="." instance=ExtResource("1_rph1a")]
+tool_type = 2
 
 [node name="Tool - Fire" parent="." instance=ExtResource("1_rph1a")]
 tool_sprite = ExtResource("2_u6nxf")
 
 [node name="Tool - Fuel" parent="." instance=ExtResource("1_rph1a")]
+tool_type = 5
 tool_sprite = ExtResource("3_c1h4k")
 
 [node name="Tool - Screwdriver" parent="." instance=ExtResource("1_rph1a")]
+tool_type = 1
 tool_sprite = ExtResource("4_j58ce")
 
 [node name="Tool - Tyre" parent="." instance=ExtResource("1_rph1a")]
+tool_type = 3
 tool_sprite = ExtResource("5_abr8i")
 
 [node name="Tool - Wiper" parent="." instance=ExtResource("1_rph1a")]
+tool_type = 4
 tool_sprite = ExtResource("6_c7vyc")
 
 [node name="Highlight" type="Sprite2D" parent="."]

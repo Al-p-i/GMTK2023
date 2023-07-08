@@ -3,6 +3,7 @@ extends Node2D
 @export var tools: Array[Node2D] = []
 @onready var hightlight: Sprite2D = $"Highlight"
 
+var tool_cursor: Sprite2D = null
 const toolWidth = 280
 const toolGap = 30
 
@@ -14,6 +15,11 @@ var selectedToolIndex: int = -1 :
 
 func _ready():
 	initTools()
+	
+func _process(delta):
+	if tool_cursor:
+		tool_cursor.global_position = get_global_mouse_position()
+	
 
 func initTools():
 	var width = ProjectSettings.get_setting("display/window/size/viewport_width")
@@ -31,6 +37,8 @@ func highlightTool():
 func setTool(k: int):
 	var tween = get_tree().create_tween().set_parallel(true)
 	selectedToolIndex = k
+	Global.selected_tool = tools[selectedToolIndex]
+	print('selected ', Global.selected_tool)
 	
 	for i in range(0, tools.size()):
 		var targetPos = tools[i].position
@@ -42,6 +50,8 @@ func setTool(k: int):
 			tween.tween_property(tools[i], "position", targetPos, 0.25)
 	
 	highlightTool()
+	init_tool_cursor()
+
 
 func leaveTool():
 	var tween = get_tree().create_tween().set_parallel(true)
@@ -53,3 +63,15 @@ func leaveTool():
 		tween.tween_property(tools[i], "position", targetPos, 0.25)
 	selectedToolIndex = -1
 	hightlight.position.x = -9999
+	remove_tool_cursor()
+
+func init_tool_cursor():
+	var tool_sprite = Sprite2D.new()
+	add_child(tool_sprite)
+	tool_sprite.texture = Global.selected_tool.sprite.texture
+	tool_cursor = tool_sprite
+
+func remove_tool_cursor():
+	if tool_cursor:
+		tool_cursor.queue_free()
+		tool_cursor = null

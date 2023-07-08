@@ -1,6 +1,9 @@
 extends Node
 
+enum TOOL_TYPES { FIRE_EXTINGUISHER, SCREWDRIVER, JACK, TYRE, WIPER, FUEL }
 var current_camera = null
+
+var selected_tool: Node2D = null
 
 func _ready():
 	pass # Replace with function body.

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bbqi8vsbqasme"]
+[gd_scene load_steps=11 format=3 uid="uid://bbqi8vsbqasme"]
 
 [ext_resource type="Script" path="res://scripts/CarController.gd" id="1_fe5xa"]
 [ext_resource type="PackedScene" uid="uid://b2e6x4lqeafy4" path="res://car/tyre.tscn" id="2_awa1m"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://1f4d8unce01q" path="res://car/driver.tscn" id="5_nwn1h"]
 [ext_resource type="PackedScene" uid="uid://baoqi07o2ex3l" path="res://car/engine.tscn" id="6_qi2kc"]
 [ext_resource type="PackedScene" uid="uid://bphsypn0noqoy" path="res://car/fueling.tscn" id="7_re7yb"]
+[ext_resource type="PackedScene" uid="uid://bayi6ghfhdy0c" path="res://car/jack.tscn" id="8_k8qoy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sv6vu"]
 size = Vector2(128, 128)
@@ -25,10 +26,10 @@ script = ExtResource("1_fe5xa")
 shape = SubResource("RectangleShape2D_sv6vu")
 
 [node name="FLTyre" parent="Car" instance=ExtResource("2_awa1m")]
-position = Vector2(175, -211)
+position = Vector2(175, -235)
 
 [node name="FRTyre" parent="Car" instance=ExtResource("2_awa1m")]
-position = Vector2(173, 95)
+position = Vector2(172, 115)
 
 [node name="BLTyre" parent="Car" instance=ExtResource("2_awa1m")]
 position = Vector2(-497, -235)
@@ -51,5 +52,11 @@ position = Vector2(-122, -80)
 [node name="Engine" parent="Car" instance=ExtResource("6_qi2kc")]
 position = Vector2(-394, -73)
 
-[node name="Fueling" parent="." instance=ExtResource("7_re7yb")]
+[node name="Fueling" parent="Car" instance=ExtResource("7_re7yb")]
 position = Vector2(-175, 92)
+
+[node name="FrontJack" parent="Car" instance=ExtResource("8_k8qoy")]
+position = Vector2(443, -113)
+
+[node name="RareJack" parent="Car" instance=ExtResource("8_k8qoy")]
+position = Vector2(-632, -118)
