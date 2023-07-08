@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://cqerd1vfx61hq"]
+[gd_scene load_steps=6 format=3 uid="uid://cqerd1vfx61hq"]
 
 [ext_resource type="PackedScene" uid="uid://bbqi8vsbqasme" path="res://scenes/CarContainer.tscn" id="1_qd1ne"]
 [ext_resource type="PackedScene" uid="uid://bfdofyfu4mfbu" path="res://scenes/ToolsContainer.tscn" id="3_vn25e"]
 [ext_resource type="Texture2D" uid="uid://brshcucwws82s" path="res://assets/bg.png" id="3_w0wws"]
 [ext_resource type="PackedScene" uid="uid://cmuhaxxjwnv2t" path="res://scenes/CarStatusPanel.tscn" id="4_34sye"]
+[ext_resource type="PackedScene" uid="uid://bo1lji1pbodxn" path="res://scenes/TopTimer.tscn" id="5_5r6du"]
 
 [node name="Game" type="Node2D"]
 
@@ -20,3 +21,6 @@ position = Vector2(0, 1050)
 
 [node name="Car Status Panel" parent="." instance=ExtResource("4_34sye")]
 position = Vector2(1760, 175)
+
+[node name="Top Timer" parent="." instance=ExtResource("5_5r6du")]
+position = Vector2(960, 100)

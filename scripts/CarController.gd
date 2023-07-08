@@ -17,7 +17,7 @@ const ENTER_POSITION: Vector2 = Vector2(-5000, 540)
 const STOP_POSITION: Vector2 = Vector2(1000, 540)
 const LEAVE_POSITION: Vector2 = Vector2(5000, 540)
 
-var carFuelAmount: int = 50
+var carFuelAmount: int = 100
 
 func _ready():
 	Car.position = ENTER_POSITION
@@ -26,7 +26,6 @@ func _ready():
 	BottomStatusPanel.updateIcons(selected_actions)
 	
 	var fuelRotation: float = (carFuelAmount / 100.0) * 120.0
-	print(fuelRotation)
 	BottomStatusPanel.updateFuelIcon(fuelRotation)
 	
 	moveCar(STOP_POSITION)
@@ -49,3 +48,9 @@ func moveCar(targetPos: Vector2):
 
 func carArrive():
 	emit_signal("car_arrive_pitstop")
+
+@onready var bodySprite = $"Car/Body"
+@onready var rearWingSprite = $"Car/RareWing"
+
+func updateCarParts():
+	pass
