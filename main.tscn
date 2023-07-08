@@ -1,10 +1,15 @@
 [gd_scene load_steps=11 format=3 uid="uid://caa4jvkolxqv3"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_bmp25"]
-[ext_resource type="Texture2D" uid="uid://cwjpopaqks3sm" path="res://Assets/clipart396865.png" id="2_3wyl4"]
-[ext_resource type="PackedScene" uid="uid://b2e6x4lqeafy4" path="res://tire.tscn" id="2_wxehl"]
-[ext_resource type="PackedScene" uid="uid://bphsypn0noqoy" path="res://fueling.tscn" id="3_l16cd"]
-[ext_resource type="PackedScene" uid="uid://bayi6ghfhdy0c" path="res://jack.tscn" id="5_kitxg"]
+[ext_resource type="Texture2D" uid="uid://cwjpopaqks3sm" path="res://assets/clipart396865.png" id="2_3wyl4"]
+[ext_resource type="PackedScene" uid="uid://b2e6x4lqeafy4" path="res://car/tyre.tscn" id="2_wxehl"]
+[ext_resource type="PackedScene" uid="uid://bphsypn0noqoy" path="res://car/fueling.tscn" id="3_l16cd"]
+[ext_resource type="PackedScene" uid="uid://bayi6ghfhdy0c" path="res://car/jack.tscn" id="5_kitxg"]
+[ext_resource type="PackedScene" uid="uid://1f4d8unce01q" path="res://car/driver.tscn" id="6_x03c1"]
+[ext_resource type="PackedScene" uid="uid://by13woh5462ng" path="res://car/front_wing.tscn" id="7_wukw3"]
+[ext_resource type="PackedScene" uid="uid://dyngkhe8mqs0s" path="res://car/rare_wing.tscn" id="8_4mvqv"]
+[ext_resource type="PackedScene" uid="uid://baoqi07o2ex3l" path="res://car/engine.tscn" id="9_yd8jw"]
+[ext_resource type="PackedScene" uid="uid://bxkonmjmcd05u" path="res://tools/tool.tscn" id="10_cjne6"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_bmp25")
@@ -39,35 +44,29 @@ position = Vector2(1601, 355)
 [node name="RearJack" parent="." instance=ExtResource("5_kitxg")]
 position = Vector2(203, 353)
 
-[node name="Tool1" parent="." instance=ExtResource("6_lr6s4")]
-position = Vector2(281, 886)
+[node name="Driver" parent="." instance=ExtResource("6_x03c1")]
+position = Vector2(959, 380)
 
-[node name="Tool2" parent="." instance=ExtResource("6_lr6s4")]
-position = Vector2(518, 888)
+[node name="FrontWing" parent="." instance=ExtResource("7_wukw3")]
+position = Vector2(1533, 170)
+
+[node name="RareWing" parent="." instance=ExtResource("8_4mvqv")]
+position = Vector2(383, 173)
+
+[node name="Engine" parent="." instance=ExtResource("9_yd8jw")]
+position = Vector2(667, 363)
+
+[node name="Tool" parent="." instance=ExtResource("10_cjne6")]
+position = Vector2(468, 882)
+
+[node name="Tool2" parent="." instance=ExtResource("10_cjne6")]
+position = Vector2(708, 884)
 type = 1
 
-[node name="Tool3" parent="." instance=ExtResource("6_lr6s4")]
-position = Vector2(752, 887)
+[node name="Tool3" parent="." instance=ExtResource("10_cjne6")]
+position = Vector2(942, 885)
 type = 2
 
-[node name="Tool4" parent="." instance=ExtResource("6_lr6s4")]
-position = Vector2(984, 887)
+[node name="Tool4" parent="." instance=ExtResource("10_cjne6")]
+position = Vector2(1175, 883)
 type = 3
-
-[node name="Tool5" parent="." instance=ExtResource("6_lr6s4")]
-position = Vector2(1215, 886)
-
-[node name="Tool6" parent="." instance=ExtResource("6_lr6s4")]
-position = Vector2(1443, 885)
-
-[node name="Engine" parent="." instance=ExtResource("7_sv56a")]
-position = Vector2(617, 349)
-
-[node name="FrontWing" parent="." instance=ExtResource("8_40clj")]
-position = Vector2(1533, 173)
-
-[node name="RareWing" parent="." instance=ExtResource("8_e1e2o")]
-position = Vector2(384, 175)
-
-[node name="Driver" parent="." instance=ExtResource("10_qnn0k")]
-position = Vector2(966, 377)

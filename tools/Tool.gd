@@ -2,7 +2,7 @@ extends Node2D
 class_name Tool
 
 var is_ready = true
-enum ToolType {FIRE_EXTINGUISHER, SCREWDRIVER, JACK, TIRE}
+enum ToolType {FIRE_EXTINGUISHER, SCREWDRIVER, JACK, TYRE}
 @export var type: ToolType
 
 # Called when the node enters the scene tree for the first time.
