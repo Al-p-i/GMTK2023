@@ -1,8 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://cqerd1vfx61hq"]
+[gd_scene load_steps=4 format=3 uid="uid://cqerd1vfx61hq"]
 
 [ext_resource type="PackedScene" uid="uid://bbqi8vsbqasme" path="res://scenes/CarContainer.tscn" id="1_qd1ne"]
+[ext_resource type="PackedScene" uid="uid://bfdofyfu4mfbu" path="res://scenes/ToolsContainer.tscn" id="3_vn25e"]
+[ext_resource type="Texture2D" uid="uid://brshcucwws82s" path="res://assets/bg.png" id="3_w0wws"]
 
 [node name="Game" type="Node2D"]
 
+[node name="Bg" type="Sprite2D" parent="."]
+z_index = -5
+position = Vector2(960, 540)
+texture = ExtResource("3_w0wws")
+
 [node name="Car Container" parent="." instance=ExtResource("1_qd1ne")]
-position = Vector2(800, 410)
+
+[node name="Tools Container" parent="." instance=ExtResource("3_vn25e")]
+position = Vector2(0, 1050)

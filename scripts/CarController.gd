@@ -5,15 +5,15 @@ signal car_leave_pitstop
 
 @export var POSSIBLE_ACTIONS: Array[String] = []
 @export var POSSIBLE_ACTION_OBJECTS: Array[PackedScene] = []
-const MAX_ACTIONS: int = 3
-
 @onready var Car := $Car
+
+const MAX_ACTIONS: int = 3
 
 var selected_actions: Array[String] = []
 
-const ENTER_POSITION: Vector2 = Vector2(-5000, 400)
-const STOP_POSITION: Vector2 = Vector2(800, 400)
-const LEAVE_POSITION: Vector2 = Vector2(5000, 400)
+const ENTER_POSITION: Vector2 = Vector2(-5000, 540)
+const STOP_POSITION: Vector2 = Vector2(1000, 540)
+const LEAVE_POSITION: Vector2 = Vector2(5000, 540)
 
 func _ready():
 	Car.position = ENTER_POSITION

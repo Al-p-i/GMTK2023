@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://bbqi8vsbqasme"]
 
-[ext_resource type="Script" path="res://CarController.gd" id="1_gyo2t"]
+[ext_resource type="Script" path="res://scripts/CarController.gd" id="1_fe5xa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sv6vu"]
 size = Vector2(128, 128)
@@ -24,7 +24,7 @@ load_path = "res://.godot/imported/driver body.png-97a49f23fbd9526b1b9ae2338721a
 load_path = "res://.godot/imported/driver_head.png-62d7d5379cfafa6f3a15b422d4122a9d.ctex"
 
 [node name="Car Container" type="Node2D"]
-script = ExtResource("1_gyo2t")
+script = ExtResource("1_fe5xa")
 
 [node name="Timer" type="Timer" parent="."]
 
@@ -40,11 +40,11 @@ texture = SubResource("CompressedTexture2D_7okvj")
 [node name="Back Tires" type="Node2D" parent="Car"]
 
 [node name="Tire_2" type="Sprite2D" parent="Car/Back Tires"]
-position = Vector2(-296, -153)
+position = Vector2(-296, -174)
 texture = SubResource("CompressedTexture2D_jka02")
 
 [node name="Tire" type="Sprite2D" parent="Car/Back Tires"]
-position = Vector2(-296, 153)
+position = Vector2(-296, 174)
 texture = SubResource("CompressedTexture2D_jka02")
 
 [node name="Body" type="Sprite2D" parent="Car"]

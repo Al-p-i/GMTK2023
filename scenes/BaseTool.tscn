@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://w5uxv8tm3a3d"]
+
+[ext_resource type="Script" path="res://scripts/Tool.gd" id="1_iw73e"]
+[ext_resource type="Texture2D" uid="uid://bkjhpv8r5ayk5" path="res://assets/tool/tool_jack.png" id="2_4cdlv"]
+[ext_resource type="Texture2D" uid="uid://c0cs73ub042ob" path="res://assets/tool/tool_fuel.png" id="3_q7mah"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_75o26"]
+size = Vector2(260, 414)
+
+[node name="Tool" type="Node2D"]
+script = ExtResource("1_iw73e")
+tool_sprite = ExtResource("2_4cdlv")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("3_q7mah")
+
+[node name="Area" type="Area2D" parent="."]
+
+[node name="Collider" type="CollisionShape2D" parent="Area"]
+shape = SubResource("RectangleShape2D_75o26")
+
+[connection signal="input_event" from="Area" to="." method="_on_area_input_event"]
