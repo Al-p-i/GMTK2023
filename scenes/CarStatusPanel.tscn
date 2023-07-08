@@ -1,0 +1,117 @@
+[gd_scene load_steps=19 format=3 uid="uid://cmuhaxxjwnv2t"]
+
+[ext_resource type="Texture2D" uid="uid://cq36o0stxbrpd" path="res://assets/ui/ui_stat_panel.png" id="1_dra6p"]
+[ext_resource type="Script" path="res://scenes/StatusPanel.gd" id="1_ntuvn"]
+[ext_resource type="Texture2D" uid="uid://1bn3teiv5w7u" path="res://assets/stat/stat_front_green.png" id="2_fqls6"]
+[ext_resource type="Texture2D" uid="uid://b5r4ncw1vcoqd" path="res://assets/stat/stat_body_green.png" id="2_lsehd"]
+[ext_resource type="Texture2D" uid="uid://b7jgdii6mvv3g" path="res://assets/stat/stat_rear_green.png" id="4_7ml6l"]
+[ext_resource type="Texture2D" uid="uid://daj8sl7rsao4w" path="res://assets/stat/stat_driver_green.png" id="5_s4m0w"]
+[ext_resource type="Texture2D" uid="uid://cclm6ug02ljcg" path="res://assets/stat/stat_engine_green.png" id="6_8rc2h"]
+[ext_resource type="Texture2D" uid="uid://bixl0kwei1efm" path="res://assets/stat/stat_fuel_green.png" id="7_5oa1y"]
+[ext_resource type="Texture2D" uid="uid://c363owfufoomn" path="res://assets/stat/stat_tire_green.png" id="8_vmwah"]
+[ext_resource type="Texture2D" uid="uid://cq040ppx55b85" path="res://assets/icon/icon_border_green.png" id="10_ow8jo"]
+[ext_resource type="Script" path="res://scenes/BottomStatusPanel.gd" id="10_u63tr"]
+[ext_resource type="Texture2D" uid="uid://bkky4vj6y72ei" path="res://assets/icon/icon_fuel_pin.png" id="11_3d5v8"]
+[ext_resource type="Texture2D" uid="uid://if0g07y0vflp" path="res://assets/icon/icon_body_green.png" id="11_5b837"]
+[ext_resource type="Texture2D" uid="uid://bfqj5hyix4oot" path="res://assets/icon/icon_fuel_stat.png" id="11_7rfyp"]
+[ext_resource type="Texture2D" uid="uid://b1yyu236s0s03" path="res://assets/icon/icon_wing_green.png" id="11_btamy"]
+[ext_resource type="Texture2D" uid="uid://cp1recqan0xf7" path="res://assets/icon/icon_tire_green.png" id="11_iltec"]
+[ext_resource type="Texture2D" uid="uid://bjjr8v3np3roj" path="res://assets/icon/icon_engine_green.png" id="11_lt5cx"]
+[ext_resource type="Texture2D" uid="uid://vcf1i8ivwjpf" path="res://assets/icon/icon_driver_green.png" id="12_ggfab"]
+
+[node name="Car Status Panel" type="Node2D"]
+script = ExtResource("1_ntuvn")
+
+[node name="Top Car Model" type="Node2D" parent="."]
+
+[node name="Background" type="Sprite2D" parent="Top Car Model"]
+texture = ExtResource("1_dra6p")
+
+[node name="Front Status" type="Sprite2D" parent="Top Car Model"]
+position = Vector2(106, -89)
+texture = ExtResource("2_fqls6")
+
+[node name="Body Status" type="Sprite2D" parent="Top Car Model"]
+position = Vector2(0, -89)
+texture = ExtResource("2_lsehd")
+
+[node name="Rear Status" type="Sprite2D" parent="Top Car Model"]
+position = Vector2(-117, -89)
+texture = ExtResource("4_7ml6l")
+
+[node name="Driver Status" type="Sprite2D" parent="Top Car Model"]
+position = Vector2(-18, -89)
+texture = ExtResource("5_s4m0w")
+
+[node name="Engine Status" type="Sprite2D" parent="Top Car Model"]
+position = Vector2(-63, -92)
+texture = ExtResource("6_8rc2h")
+
+[node name="Fuel Status" type="Sprite2D" parent="Top Car Model"]
+position = Vector2(-40, -67)
+texture = ExtResource("7_5oa1y")
+
+[node name="Tire Status 0" type="Sprite2D" parent="Top Car Model"]
+position = Vector2(64, -44)
+texture = ExtResource("8_vmwah")
+
+[node name="Tire Status 1" type="Sprite2D" parent="Top Car Model"]
+position = Vector2(64, -134)
+texture = ExtResource("8_vmwah")
+
+[node name="Tire Status 2" type="Sprite2D" parent="Top Car Model"]
+position = Vector2(-72, -134)
+texture = ExtResource("8_vmwah")
+
+[node name="Tire Status 3" type="Sprite2D" parent="Top Car Model"]
+position = Vector2(-72, -44)
+texture = ExtResource("8_vmwah")
+
+[node name="Bottom Status" type="Node2D" parent="."]
+script = ExtResource("10_u63tr")
+
+[node name="Status 1" type="Sprite2D" parent="Bottom Status"]
+position = Vector2(-90, 26)
+texture = ExtResource("10_ow8jo")
+
+[node name="Engine Status" type="Sprite2D" parent="Bottom Status/Status 1"]
+texture = ExtResource("11_lt5cx")
+
+[node name="Status 2" type="Sprite2D" parent="Bottom Status"]
+position = Vector2(0, 26)
+texture = ExtResource("10_ow8jo")
+
+[node name="Fuel Pin" type="Sprite2D" parent="Bottom Status/Status 2"]
+position = Vector2(0, 8)
+texture = ExtResource("11_3d5v8")
+
+[node name="Fuel BG" type="Sprite2D" parent="Bottom Status/Status 2"]
+texture = ExtResource("11_7rfyp")
+
+[node name="Status 3" type="Sprite2D" parent="Bottom Status"]
+position = Vector2(90, 26)
+texture = ExtResource("10_ow8jo")
+
+[node name="Tire Status" type="Sprite2D" parent="Bottom Status/Status 3"]
+texture = ExtResource("11_iltec")
+
+[node name="Status 4" type="Sprite2D" parent="Bottom Status"]
+position = Vector2(90, 116)
+texture = ExtResource("10_ow8jo")
+
+[node name="Wing Status" type="Sprite2D" parent="Bottom Status/Status 4"]
+texture = ExtResource("11_btamy")
+
+[node name="Status 5" type="Sprite2D" parent="Bottom Status"]
+position = Vector2(0, 116)
+texture = ExtResource("10_ow8jo")
+
+[node name="Body Status" type="Sprite2D" parent="Bottom Status/Status 5"]
+texture = ExtResource("11_5b837")
+
+[node name="Status 6" type="Sprite2D" parent="Bottom Status"]
+position = Vector2(-90, 116)
+texture = ExtResource("10_ow8jo")
+
+[node name="Driver Status" type="Sprite2D" parent="Bottom Status/Status 6"]
+texture = ExtResource("12_ggfab")
