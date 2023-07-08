@@ -1,4 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://1f4d8unce01q"]
+[gd_scene load_steps=4 format=3 uid="uid://1f4d8unce01q"]
+
+[ext_resource type="Texture2D" uid="uid://dybmvdgkihogs" path="res://assets/car/driver body.png" id="1_570ey"]
+[ext_resource type="Texture2D" uid="uid://cl8ilsyohnlc8" path="res://assets/car/driver_head.png" id="2_lmdjx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cjmuu"]
 size = Vector2(176, 180)
@@ -13,7 +16,16 @@ shape = SubResource("RectangleShape2D_cjmuu")
 debug_color = Color(0.807843, 0.00392157, 0.996078, 0.419608)
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
+visible = false
 offset_left = -7.0
 offset_top = -37.0
 offset_right = 165.0
 offset_bottom = -10.0
+
+[node name="DriverBody" type="Sprite2D" parent="."]
+position = Vector2(78, 80)
+texture = ExtResource("1_570ey")
+
+[node name="DriverHead" type="Sprite2D" parent="."]
+position = Vector2(48, 77)
+texture = ExtResource("2_lmdjx")

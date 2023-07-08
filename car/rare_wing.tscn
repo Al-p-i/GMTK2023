@@ -1,19 +1,26 @@
-[gd_scene load_steps=2 format=3 uid="uid://dyngkhe8mqs0s"]
+[gd_scene load_steps=3 format=3 uid="uid://dyngkhe8mqs0s"]
+
+[ext_resource type="Texture2D" uid="uid://cscuk6vslicqh" path="res://assets/car/rear_wing_good.png" id="1_230qi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_14ilt"]
-size = Vector2(185, 581)
+size = Vector2(147, 299)
 
 [node name="RareWing" type="Node2D"]
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(82.5, 280.5)
+position = Vector2(72.5, 152.5)
 shape = SubResource("RectangleShape2D_14ilt")
 debug_color = Color(0.682353, 0.501961, 0, 0.419608)
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
-offset_left = -3.0
-offset_top = -42.0
-offset_right = 172.0
-offset_bottom = -15.0
+visible = false
+offset_left = -15.0
+offset_top = -25.0
+offset_right = 160.0
+offset_bottom = 2.0
+
+[node name="RearWingGood" type="Sprite2D" parent="."]
+position = Vector2(81, 156)
+texture = ExtResource("1_230qi")

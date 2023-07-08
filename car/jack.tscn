@@ -25,6 +25,7 @@ text = "Jack OFF"
 [node name="WorkTimer" type="Timer" parent="."]
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
+visible = false
 offset_left = -10.0
 offset_top = -37.0
 offset_right = 198.0
