@@ -66,9 +66,23 @@ func leaveTool():
 	remove_tool_cursor()
 
 func init_tool_cursor():
+	if !Global.selected_tool:
+		return
+		
 	var tool_sprite = Sprite2D.new()
+	match Global.selected_tool.tool_type:
+		Global.TOOL_TYPES.FUEL:
+			tool_sprite.texture = load("res://assets/use/use_fuel.png")
+			tool_sprite.offset = Vector2(20,190)
+		Global.TOOL_TYPES.WIPER:
+			tool_sprite.texture = load("res://assets/use/use_wipe.png")
+		Global.TOOL_TYPES.SCREWDRIVER:
+			tool_sprite.texture = load("res://assets/use/use_screw.png")
+		_:
+			add_child(tool_sprite)
+			tool_sprite.texture = Global.selected_tool.sprite.texture
+			tool_cursor = tool_sprite
 	add_child(tool_sprite)
-	tool_sprite.texture = Global.selected_tool.sprite.texture
 	tool_cursor = tool_sprite
 
 func remove_tool_cursor():

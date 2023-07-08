@@ -15,7 +15,6 @@ shape = SubResource("RectangleShape2D_14ilt")
 debug_color = Color(0.682353, 0.501961, 0, 0.419608)
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
-visible = false
 offset_left = -15.0
 offset_top = -25.0
 offset_right = 160.0

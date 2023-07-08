@@ -1,7 +1,7 @@
 extends Node2D
 
 
-@onready var progress_bar = $ProgressBar
+@onready var progress_bar = $TextureProgressBar
 @onready var fuel_timer = $Timer
 var fueling_in_progress = false
 

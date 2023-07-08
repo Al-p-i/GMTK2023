@@ -3,6 +3,8 @@ extends Node2D
 @onready var label = $Label
 @onready var work_timer = $WorkTimer
 @onready var progress_bar = $ProgressBar
+@onready var use_jack_off = $UseJackOff
+@onready var use_jack_on = $UseJackOn
 
 var activated = false
 
@@ -32,13 +34,18 @@ func toggle_jack():
 		progress_bar.value = 0
 		work_timer.start(0.25)
 		progress_bar.show()
+		use_jack_on.hide()
+		use_jack_off.show()
 
 	else:
 		activated = false
 		progress_bar.value = 0
 		work_timer.stop()
 		label.text = "Jack OFF"
-		progress_bar.shohidew()
+		progress_bar.hide()
+		use_jack_on.hide()
+		use_jack_off.hide()
+		
 
 
 
@@ -51,3 +58,5 @@ func progress():
 	if progress_bar.value == 100:
 		activated = true
 		label.text = "Jack ON"
+		use_jack_on.show()
+		use_jack_off.hide()

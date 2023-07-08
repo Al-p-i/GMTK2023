@@ -22,6 +22,9 @@ script = ExtResource("1_fe5xa")
 
 [node name="Car" type="CharacterBody2D" parent="."]
 
+[node name="FrontJack" parent="Car" instance=ExtResource("8_k8qoy")]
+position = Vector2(418, -105)
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Car"]
 shape = SubResource("RectangleShape2D_sv6vu")
 
@@ -53,10 +56,4 @@ position = Vector2(-122, -80)
 position = Vector2(-394, -73)
 
 [node name="Fueling" parent="Car" instance=ExtResource("7_re7yb")]
-position = Vector2(-175, 92)
-
-[node name="FrontJack" parent="Car" instance=ExtResource("8_k8qoy")]
-position = Vector2(443, -113)
-
-[node name="RareJack" parent="Car" instance=ExtResource("8_k8qoy")]
-position = Vector2(-632, -118)
+position = Vector2(-176, 97)
