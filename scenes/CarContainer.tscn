@@ -1,20 +1,27 @@
-[gd_scene load_steps=11 format=3 uid="uid://bbqi8vsbqasme"]
+[gd_scene load_steps=9 format=3 uid="uid://bbqi8vsbqasme"]
 
 [ext_resource type="Script" path="res://CarController.gd" id="1_gyo2t"]
-[ext_resource type="Texture2D" uid="uid://cgkksuiyxgkn5" path="res://assets/front_wing.png" id="2_cdgtb"]
-[ext_resource type="Texture2D" uid="uid://du407p12g1eq2" path="res://assets/tire_normal.png" id="3_s2ubh"]
-[ext_resource type="Texture2D" uid="uid://dsr5qecck0g4f" path="res://assets/body.png" id="4_8yb0i"]
-[ext_resource type="Texture2D" uid="uid://r57m788xjoy5" path="res://assets/rear_wing.png" id="5_vhm0n"]
-[ext_resource type="Texture2D" uid="uid://c8gw1bcn5ry4y" path="res://assets/driver body.png" id="6_5wutu"]
-[ext_resource type="Texture2D" uid="uid://buqxwpu5poiby" path="res://assets/driver_head.png" id="7_1k5g6"]
-[ext_resource type="Script" path="res://scenes/Tweenn.gd" id="8_03t30"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sv6vu"]
 size = Vector2(128, 128)
 
-[sub_resource type="Curve" id="Curve_tvqnt"]
-_data = [Vector2(0, 0), 0.0, 3.09474, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
-point_count = 2
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7okvj"]
+load_path = "res://.godot/imported/front_wing.png-b0e6e21e02abaced2549ffd88876d2a6.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_jka02"]
+load_path = "res://.godot/imported/tire_normal.png-7a6680c84daf86c439af13c23732db36.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_yqivr"]
+load_path = "res://.godot/imported/body.png-b8c73c77b587abd445085cbdae951373.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5rxqk"]
+load_path = "res://.godot/imported/rear_wing.png-343f25b1ac9da2f8de43e2fba95cd20e.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_4suyg"]
+load_path = "res://.godot/imported/driver body.png-97a49f23fbd9526b1b9ae2338721a695.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ubo23"]
+load_path = "res://.godot/imported/driver_head.png-62d7d5379cfafa6f3a15b422d4122a9d.ctex"
 
 [node name="Car Container" type="Node2D"]
 script = ExtResource("1_gyo2t")
@@ -28,45 +35,41 @@ shape = SubResource("RectangleShape2D_sv6vu")
 
 [node name="Front Wing" type="Sprite2D" parent="Car"]
 position = Vector2(428, 0)
-texture = ExtResource("2_cdgtb")
+texture = SubResource("CompressedTexture2D_7okvj")
 
 [node name="Back Tires" type="Node2D" parent="Car"]
 
 [node name="Tire_2" type="Sprite2D" parent="Car/Back Tires"]
 position = Vector2(-296, -153)
-texture = ExtResource("3_s2ubh")
+texture = SubResource("CompressedTexture2D_jka02")
 
 [node name="Tire" type="Sprite2D" parent="Car/Back Tires"]
 position = Vector2(-296, 153)
-texture = ExtResource("3_s2ubh")
+texture = SubResource("CompressedTexture2D_jka02")
 
 [node name="Body" type="Sprite2D" parent="Car"]
-texture = ExtResource("4_8yb0i")
+texture = SubResource("CompressedTexture2D_yqivr")
 
 [node name="Front Tires" type="Node2D" parent="Car"]
 
 [node name="TireNormal3" type="Sprite2D" parent="Car/Front Tires"]
 position = Vector2(265, -174)
-texture = ExtResource("3_s2ubh")
+texture = SubResource("CompressedTexture2D_jka02")
 
 [node name="TireNormal4" type="Sprite2D" parent="Car/Front Tires"]
 position = Vector2(265, 174)
-texture = ExtResource("3_s2ubh")
+texture = SubResource("CompressedTexture2D_jka02")
 
 [node name="Rear Wing" type="Sprite2D" parent="Car"]
 position = Vector2(-484, 0)
-texture = ExtResource("5_vhm0n")
+texture = SubResource("CompressedTexture2D_5rxqk")
 
 [node name="Driver" type="Node2D" parent="Car"]
 
 [node name="DriverBody" type="Sprite2D" parent="Car/Driver"]
 position = Vector2(-42, 0)
-texture = ExtResource("6_5wutu")
+texture = SubResource("CompressedTexture2D_4suyg")
 
 [node name="DriverHead" type="Sprite2D" parent="Car/Driver"]
 position = Vector2(-69, 0)
-texture = ExtResource("7_1k5g6")
-
-[node name="Node" type="Node" parent="."]
-script = ExtResource("8_03t30")
-curve = SubResource("Curve_tvqnt")
+texture = SubResource("CompressedTexture2D_ubo23")

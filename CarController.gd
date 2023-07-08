@@ -34,4 +34,4 @@ func genCarActions() -> Array[String]:
 func moveCar(targetPos: Vector2):
 	var tween: Tween = get_tree().create_tween()
 	
-	tween.tween_property(Car, "position", targetPos, 5)
+	tween.tween_property(Car, "position", targetPos, 5).set_trans(Tween.TRANS_QUINT).set_ease(Tween.EASE_OUT)
