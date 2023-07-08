@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://by13woh5462ng"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_phwyp"]
+size = Vector2(103, 584)
+
+[node name="FrontWing" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(41.5, 282)
+shape = SubResource("RectangleShape2D_phwyp")
+debug_color = Color(0.662745, 0.513726, 0, 0.419608)
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_left = -11.0
+offset_top = -40.0
+offset_right = 94.0
+offset_bottom = -13.0
