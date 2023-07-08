@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://bxkonmjmcd05u"]
+
+[ext_resource type="Script" path="res://tools/Tool.gd" id="1_rvw74"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1vgni"]
+size = Vector2(208, 203)
+
+[node name="Tool" type="Node2D"]
+script = ExtResource("1_rvw74")
+
+[node name="CooldownTimer" type="Timer" parent="."]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(94, 91.5)
+shape = SubResource("RectangleShape2D_1vgni")
+debug_color = Color(0, 0.639216, 0.376471, 0.419608)
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://1f4d8unce01q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cjmuu"]
+size = Vector2(176, 180)
+
+[node name="Driver" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(78, 80)
+shape = SubResource("RectangleShape2D_cjmuu")
+debug_color = Color(0.807843, 0.00392157, 0.996078, 0.419608)
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_left = -7.0
+offset_top = -37.0
+offset_right = 165.0
+offset_bottom = -10.0

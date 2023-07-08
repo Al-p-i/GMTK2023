@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://caa4jvkolxqv3"]
+[gd_scene load_steps=11 format=3 uid="uid://caa4jvkolxqv3"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_bmp25"]
 [ext_resource type="Texture2D" uid="uid://cwjpopaqks3sm" path="res://Assets/clipart396865.png" id="2_3wyl4"]
@@ -38,3 +38,36 @@ position = Vector2(1601, 355)
 
 [node name="RearJack" parent="." instance=ExtResource("5_kitxg")]
 position = Vector2(203, 353)
+
+[node name="Tool1" parent="." instance=ExtResource("6_lr6s4")]
+position = Vector2(281, 886)
+
+[node name="Tool2" parent="." instance=ExtResource("6_lr6s4")]
+position = Vector2(518, 888)
+type = 1
+
+[node name="Tool3" parent="." instance=ExtResource("6_lr6s4")]
+position = Vector2(752, 887)
+type = 2
+
+[node name="Tool4" parent="." instance=ExtResource("6_lr6s4")]
+position = Vector2(984, 887)
+type = 3
+
+[node name="Tool5" parent="." instance=ExtResource("6_lr6s4")]
+position = Vector2(1215, 886)
+
+[node name="Tool6" parent="." instance=ExtResource("6_lr6s4")]
+position = Vector2(1443, 885)
+
+[node name="Engine" parent="." instance=ExtResource("7_sv56a")]
+position = Vector2(617, 349)
+
+[node name="FrontWing" parent="." instance=ExtResource("8_40clj")]
+position = Vector2(1533, 173)
+
+[node name="RareWing" parent="." instance=ExtResource("8_e1e2o")]
+position = Vector2(384, 175)
+
+[node name="Driver" parent="." instance=ExtResource("10_qnn0k")]
+position = Vector2(966, 377)
