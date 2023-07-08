@@ -11,13 +11,15 @@ const MAX_ACTIONS: int = 3
 
 var selected_actions: Array[String] = []
 
-const ENTER_POSITION: Vector2 = Vector2(0, 0)
-const STOP_POSITION: Vector2 = Vector2(0, 0)
-const LEAVE_POSITION: Vector2 = Vector2(0, 0)
+const ENTER_POSITION: Vector2 = Vector2(-5000, 400)
+const STOP_POSITION: Vector2 = Vector2(800, 400)
+const LEAVE_POSITION: Vector2 = Vector2(5000, 400)
 
 func _ready():
 	Car.position = ENTER_POSITION
 	selected_actions = genCarActions()
+	
+	moveCar(STOP_POSITION)
 
 func genCarActions() -> Array[String]:
 	var toReturn: Array[String] = []
@@ -32,3 +34,4 @@ func genCarActions() -> Array[String]:
 func moveCar(targetPos: Vector2):
 	var tween: Tween = get_tree().create_tween()
 	
+	tween.tween_property(Car, "position", targetPos, 5)
