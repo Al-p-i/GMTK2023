@@ -1,10 +1,40 @@
-[gd_scene load_steps=2 format=3 uid="uid://caa4jvkolxqv3"]
+[gd_scene load_steps=6 format=3 uid="uid://caa4jvkolxqv3"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_bmp25"]
+[ext_resource type="Texture2D" uid="uid://cwjpopaqks3sm" path="res://assets/clipart396865.png" id="2_3wyl4"]
+[ext_resource type="PackedScene" uid="uid://b2e6x4lqeafy4" path="res://tire.tscn" id="2_wxehl"]
+[ext_resource type="PackedScene" uid="uid://bphsypn0noqoy" path="res://fueling.tscn" id="3_l16cd"]
+[ext_resource type="PackedScene" uid="uid://bayi6ghfhdy0c" path="res://jack.tscn" id="5_kitxg"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_bmp25")
 
+[node name="Clipart396865" type="Sprite2D" parent="."]
+position = Vector2(1013, 455)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("2_3wyl4")
+
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(960, 540)
 ignore_rotation = false
+
+[node name="Tire1" parent="." instance=ExtResource("2_wxehl")]
+position = Vector2(365, -1)
+
+[node name="Tire2" parent="." instance=ExtResource("2_wxehl")]
+position = Vector2(357, 617)
+
+[node name="Tire3" parent="." instance=ExtResource("2_wxehl")]
+position = Vector2(1118, 23)
+
+[node name="Tire4" parent="." instance=ExtResource("2_wxehl")]
+position = Vector2(1115, 592)
+
+[node name="Fueling" parent="." instance=ExtResource("3_l16cd")]
+position = Vector2(871, 711)
+
+[node name="FrontJack" parent="." instance=ExtResource("5_kitxg")]
+position = Vector2(1601, 355)
+
+[node name="RearJack" parent="." instance=ExtResource("5_kitxg")]
+position = Vector2(203, 353)

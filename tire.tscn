@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://b2e6x4lqeafy4"]
+
+[ext_resource type="Script" path="res://Tire.gd" id="1_1o3xe"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hioxm"]
+size = Vector2(322, 217)
+
+[node name="Tire" type="Node2D"]
+script = ExtResource("1_1o3xe")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(247, 147.5)
+shape = SubResource("RectangleShape2D_hioxm")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_left = 87.0
+offset_top = 8.0
+offset_right = 387.0
+offset_bottom = 35.0
+metadata/_edit_use_anchors_ = true
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
