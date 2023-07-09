@@ -1,15 +1,31 @@
 extends Node2D
 
-var primaryTime = 89 * 60 + 59
+var primaryTime = 9999
 var secondaryTime = 90
 
 @onready var primaryLabel: Label = $"Background/Primary"
 @onready var secondaryLabel: Label = $"Background/Secondary"
+@onready var timer: Timer = $Timer
+
+signal noTimeLeft
 
 func startTimer( t: int ):
-	primaryTime = t * 60
+	primaryTime = t
+	timer.start()
+
+func stopTimer():
+	timer.stop()
+	
+	primaryLabel.text = "--:--"
+	secondaryLabel.text = "--"
 
 func _on_timer_timeout():
+	
+	if primaryTime <= 0 and secondaryTime == 5:
+		stopTimer()
+		emit_signal("noTimeLeft")
+		return
+	
 	secondaryTime -= 5
 	if secondaryTime == 0:
 		secondaryTime = 90
@@ -22,4 +38,4 @@ func format( time: int ) -> String:
 	var minutes: int = time / 60
 	var seconds: int = time % 60
 	
-	return str(minutes) + ":" + ("00" if str(seconds) == "0" else str(seconds))
+	return ("0" + str(minutes) if minutes < 10 else str(minutes)) + ":" + ("0" + str(seconds) if seconds < 10 else str(seconds)) 

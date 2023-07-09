@@ -3,13 +3,13 @@ extends Node2D
 @onready var credit := $Control/credits_screen
 var game_screen :PackedScene = preload("res://scenes/Game.tscn")
 
+@onready var Trans := $trans
+
 func _ready():
 	pass
 
-
 func _on_play_pressed():
 	Trans.change_scene(game_screen)
-
 
 func _on_credits_pressed():
 	Trans.wipe_in()

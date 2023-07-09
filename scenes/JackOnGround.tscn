@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bertosbbhlviv"]
+
+[ext_resource type="Texture2D" uid="uid://mgwtecktqy2h" path="res://assets/use/use_jack_off.png" id="1_6na1j"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_olblh"]
+size = Vector2(420, 200)
+
+[node name="Jack" type="Sprite2D"]
+z_index = -1
+position = Vector2(75, 0)
+texture = ExtResource("1_6na1j")
+
+[node name="Area" type="Area2D" parent="."]
+
+[node name="Collision" type="CollisionShape2D" parent="Area"]
+shape = SubResource("RectangleShape2D_olblh")

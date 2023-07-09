@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://uok8rrhvvopu"]
+[gd_scene load_steps=9 format=3 uid="uid://bp2gvppdhe1hm"]
 
 [ext_resource type="Script" path="res://scenes/TyreCloseUp.gd" id="1_otm8j"]
 [ext_resource type="Texture2D" uid="uid://di8eodihm0rdq" path="res://assets/view/view_tire_worn.png" id="2_r1xoj"]
@@ -13,15 +13,15 @@
 script = ExtResource("1_otm8j")
 
 [node name="ViewTireWorn" type="Sprite2D" parent="."]
-position = Vector2(956, 531)
+position = Vector2(960, 542)
 texture = ExtResource("2_r1xoj")
 
 [node name="ViewTireNormal" type="Sprite2D" parent="."]
-position = Vector2(958, 534)
+position = Vector2(960, 540)
 texture = ExtResource("3_rdpfl")
 
 [node name="Bolt" type="Sprite2D" parent="."]
-position = Vector2(954, 533)
+position = Vector2(960, 540)
 texture = ExtResource("4_a7id1")
 
 [node name="BoltScrew" type="Sprite2D" parent="."]
@@ -32,7 +32,7 @@ texture = ExtResource("5_swa2r")
 position = Vector2(-248, -240)
 
 [node name="BoltHint" type="Sprite2D" parent="."]
-position = Vector2(957, 534)
+position = Vector2(960, 540)
 texture = ExtResource("6_y8umg")
 
 [node name="Timer" type="Timer" parent="."]

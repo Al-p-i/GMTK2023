@@ -23,10 +23,21 @@ func brokeParts( problems: Array[String] ) -> void:
 				get_node(frontStatus).texture = ResourceLoader.load(frontTextures[1])
 			"rear_broken":
 				get_node(rearStatus).texture = ResourceLoader.load(rearTextures[1])
-			"body_broken":
+			"body_dirty":
 				get_node(bodyStatus).texture = ResourceLoader.load(bodyTextures[1])
 			"engine_broken":
 				get_node(engineStatus).texture = ResourceLoader.load(engineTextures[1])
 			"flat_tire":
 				for j in range(0, tiresStatus.size()):
 					get_node(tiresStatus[j].get_path()).texture = ResourceLoader.load(tireTextures[1])
+
+func repairEverything():
+	get_node(frontStatus).texture = ResourceLoader.load(frontTextures[0])
+	get_node(rearStatus).texture = ResourceLoader.load(rearTextures[0])
+	get_node(bodyStatus).texture = ResourceLoader.load(bodyTextures[0])
+	get_node(engineStatus).texture = ResourceLoader.load(engineTextures[0])
+	for j in range(0, tiresStatus.size()):
+		get_node(tiresStatus[j].get_path()).texture = ResourceLoader.load(tireTextures[0])
+
+func repairTire(index):
+	get_node(tiresStatus[index].get_path()).texture = ResourceLoader.load(tireTextures[0])

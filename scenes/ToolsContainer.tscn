@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bfdofyfu4mfbu"]
+[gd_scene load_steps=14 format=3 uid="uid://bfdofyfu4mfbu"]
 
 [ext_resource type="Script" path="res://scripts/ToolManager.gd" id="1_lph4c"]
 [ext_resource type="PackedScene" uid="uid://w5uxv8tm3a3d" path="res://scenes/BaseTool.tscn" id="1_rph1a"]
@@ -10,6 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://utjhtckvo2t0" path="res://assets/use/use_fire_1.png" id="5_vox1k"]
 [ext_resource type="Texture2D" uid="uid://dvo0c3mtdj2fw" path="res://assets/tool/tool_wiper.png" id="6_c7vyc"]
 [ext_resource type="Texture2D" uid="uid://dc2j537265t2f" path="res://assets/tool/tool_hilight.png" id="8_6vddo"]
+[ext_resource type="Texture2D" uid="uid://isks34cpo65i" path="res://assets/tool/tool_pompom.png" id="8_ig71w"]
+[ext_resource type="Texture2D" uid="uid://70rpnhy8q03e" path="res://assets/tool/tool_welder.png" id="9_c7got"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g7ixh"]
 animations = [{
@@ -26,18 +28,15 @@ animations = [{
 }]
 
 [node name="Tools Container" type="Node2D" node_paths=PackedStringArray("tools")]
-position = Vector2(0, 1000)
+position = Vector2(0, 970)
 script = ExtResource("1_lph4c")
-tools = [NodePath("Tool - Jack"), NodePath("Tool - Fire"), NodePath("Tool - Fuel"), NodePath("Tool - Screwdriver"), NodePath("Tool - Tyre"), NodePath("Tool - Wiper")]
-
-[node name="Tool - Jack" parent="." instance=ExtResource("1_rph1a")]
-tool_type = 2
+tools = [NodePath("Tool - Fire"), NodePath("Tool - Fuel"), NodePath("Tool - Screwdriver"), NodePath("Tool - Tyre"), NodePath("Tool - Wiper"), NodePath("Tool - Pompom"), NodePath("Tool - Welder")]
 
 [node name="Tool - Fire" parent="." instance=ExtResource("1_rph1a")]
+tool_type = 0
 tool_sprite = ExtResource("2_u6nxf")
 
 [node name="Tool - Fuel" parent="." instance=ExtResource("1_rph1a")]
-tool_type = 5
 tool_sprite = ExtResource("3_c1h4k")
 
 [node name="Tool - Screwdriver" parent="." instance=ExtResource("1_rph1a")]
@@ -51,6 +50,14 @@ tool_sprite = ExtResource("5_abr8i")
 [node name="Tool - Wiper" parent="." instance=ExtResource("1_rph1a")]
 tool_type = 4
 tool_sprite = ExtResource("6_c7vyc")
+
+[node name="Tool - Pompom" parent="." instance=ExtResource("1_rph1a")]
+tool_type = 6
+tool_sprite = ExtResource("8_ig71w")
+
+[node name="Tool - Welder" parent="." instance=ExtResource("1_rph1a")]
+tool_type = 7
+tool_sprite = ExtResource("9_c7got")
 
 [node name="Highlight" type="Sprite2D" parent="."]
 z_index = -1

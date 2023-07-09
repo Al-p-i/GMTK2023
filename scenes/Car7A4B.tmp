@@ -1,0 +1,148 @@
+[gd_scene load_steps=17 format=3 uid="uid://bbqi8vsbqasme"]
+
+[ext_resource type="Script" path="res://scripts/CarController.gd" id="1_fe5xa"]
+[ext_resource type="Texture2D" uid="uid://dybmvdgkihogs" path="res://assets/car/driver body.png" id="8_l0plo"]
+[ext_resource type="Texture2D" uid="uid://cjhh26g6mqbe2" path="res://assets/car/front_wing_good.png" id="9_0mh2u"]
+[ext_resource type="Texture2D" uid="uid://cl8ilsyohnlc8" path="res://assets/car/driver_head.png" id="9_jqp02"]
+[ext_resource type="Script" path="res://scenes/DriverPart.gd" id="10_1y17y"]
+[ext_resource type="Script" path="res://FrontWingPart.gd" id="10_6513r"]
+[ext_resource type="Texture2D" uid="uid://culhtyeakicpk" path="res://assets/car/body_good.png" id="11_eav3y"]
+[ext_resource type="Texture2D" uid="uid://j6qt36bw3wqg" path="res://assets/car/tire_good.png" id="12_tb4i7"]
+[ext_resource type="Script" path="res://scenes/TirePart.gd" id="13_v865d"]
+[ext_resource type="Script" path="res://scenes/BodyPart.gd" id="14_5y2i0"]
+[ext_resource type="Texture2D" uid="uid://cscuk6vslicqh" path="res://assets/car/rear_wing_good.png" id="14_bji8v"]
+[ext_resource type="Script" path="res://scenes/RearWingPart.gd" id="15_ody6v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ug712"]
+size = Vector2(124, 488)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iyf31"]
+size = Vector2(195, 124)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ym00f"]
+size = Vector2(854, 396)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jik22"]
+size = Vector2(164, 308)
+
+[node name="Car Container" type="Node2D"]
+script = ExtResource("1_fe5xa")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Car" type="Node2D" parent="."]
+
+[node name="Front Wing" type="Sprite2D" parent="Car"]
+position = Vector2(447, 0)
+texture = ExtResource("9_0mh2u")
+script = ExtResource("10_6513r")
+fixTool = 7
+problemId = "front_broken"
+goodPart = "res://assets/car/front_wing_good.png"
+badPart = "res://assets/car/front_wing_bad.png"
+
+[node name="Area" type="Area2D" parent="Car/Front Wing"]
+
+[node name="Collision" type="CollisionShape2D" parent="Car/Front Wing/Area"]
+position = Vector2(-5, 0)
+shape = SubResource("RectangleShape2D_ug712")
+
+[node name="Tire 3" type="Sprite2D" parent="Car"]
+position = Vector2(-271.5, 175)
+texture = ExtResource("12_tb4i7")
+script = ExtResource("13_v865d")
+fixTool = 1
+problemId = "flat_tire"
+goodPart = "res://assets/car/tire_good.png"
+badPart = "res://assets/car/tire_bad.png"
+
+[node name="Area" type="Area2D" parent="Car/Tire 3"]
+
+[node name="Collision" type="CollisionShape2D" parent="Car/Tire 3/Area"]
+shape = SubResource("RectangleShape2D_iyf31")
+
+[node name="Tire 4" type="Sprite2D" parent="Car"]
+position = Vector2(-271.5, -176)
+texture = ExtResource("12_tb4i7")
+script = ExtResource("13_v865d")
+fixTool = 1
+problemId = "flat_tire"
+goodPart = "res://assets/car/tire_good.png"
+badPart = "res://assets/car/tire_bad.png"
+
+[node name="Area" type="Area2D" parent="Car/Tire 4"]
+
+[node name="Collision" type="CollisionShape2D" parent="Car/Tire 4/Area"]
+shape = SubResource("RectangleShape2D_iyf31")
+
+[node name="Body" type="Sprite2D" parent="Car"]
+texture = ExtResource("11_eav3y")
+script = ExtResource("14_5y2i0")
+fixTool = 4
+problemId = "body_broken"
+goodPart = "res://assets/car/body_good.png"
+badPart = "res://assets/car/body_bad.png"
+
+[node name="Area" type="Area2D" parent="Car/Body"]
+
+[node name="Collision" type="CollisionShape2D" parent="Car/Body/Area"]
+shape = SubResource("RectangleShape2D_ym00f")
+
+[node name="DriverBody" type="Sprite2D" parent="Car/Body"]
+position = Vector2(-38, 0)
+texture = ExtResource("8_l0plo")
+
+[node name="Tire 1" type="Sprite2D" parent="Car"]
+position = Vector2(251, 175)
+texture = ExtResource("12_tb4i7")
+script = ExtResource("13_v865d")
+fixTool = 1
+problemId = "flat_tire"
+goodPart = "res://assets/car/tire_good.png"
+badPart = "res://assets/car/tire_bad.png"
+
+[node name="Area" type="Area2D" parent="Car/Tire 1"]
+
+[node name="Collision" type="CollisionShape2D" parent="Car/Tire 1/Area"]
+shape = SubResource("RectangleShape2D_iyf31")
+
+[node name="Tire 2" type="Sprite2D" parent="Car"]
+position = Vector2(251, -176)
+texture = ExtResource("12_tb4i7")
+script = ExtResource("13_v865d")
+fixTool = 1
+problemId = "flat_tire"
+goodPart = "res://assets/car/tire_good.png"
+badPart = "res://assets/car/tire_bad.png"
+
+[node name="Area" type="Area2D" parent="Car/Tire 2"]
+
+[node name="Collision" type="CollisionShape2D" parent="Car/Tire 2/Area"]
+shape = SubResource("RectangleShape2D_iyf31")
+
+[node name="Rear Wing" type="Sprite2D" parent="Car"]
+position = Vector2(-492, 0)
+texture = ExtResource("14_bji8v")
+script = ExtResource("15_ody6v")
+fixTool = 7
+problemId = "rear_broken"
+goodPart = "res://assets/car/rear_wing_good.png"
+badPart = "res://assets/car/rear_wing_bad.png"
+
+[node name="Area" type="Area2D" parent="Car/Rear Wing"]
+
+[node name="Collision" type="CollisionShape2D" parent="Car/Rear Wing/Area"]
+shape = SubResource("RectangleShape2D_jik22")
+
+[node name="DriverHead" type="Sprite2D" parent="Car"]
+position = Vector2(-81, 0)
+texture = ExtResource("9_jqp02")
+script = ExtResource("10_1y17y")
+fixTool = 6
+problemId = "driver_sad"
+goodPart = "res://assets/car/driver_head.png"
+badPart = "res://assets/car/driver_head.png"
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="input_event" from="Car/Front Wing/Area" to="Car/Front Wing" method="_on_area_input_event"]
+[connection signal="input_event" from="Car/Tire 1/Area" to="Car/Tire 1" method="_on_area_input_event"]

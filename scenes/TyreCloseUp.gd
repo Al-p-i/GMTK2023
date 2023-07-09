@@ -9,6 +9,10 @@ extends Node2D
 @onready var screw_position = $BoltScrew/ScrewPosition
 var unscrew = true;
 
+var index: int = 0
+
+signal tireUnscrewed
+signal tireScrewed
 
 func start_unscrew():
 	unscrew = true
@@ -25,15 +29,14 @@ func start_screw():
 	bolt.hide()
 	progress_bar.value = 0
 	show()
-	
+
 func end():
 	hide()
+	get_node("/root/Game/Car Container").ToolContainer.enableTools()
+	if unscrew:
+		emit_signal("tireUnscrewed")
+	else: emit_signal("tireScrewed")
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if bolt_screw:
 		bolt_screw.global_position = get_global_mouse_position() #+ Vector2(250,250)
@@ -62,6 +65,6 @@ func _unhandled_input(event):
 func _on_timer_timeout():
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 		var distance = screw_position.global_position.distance_to(bolt.global_position)
-		progress_bar.value += max(0, 14 - sqrt(distance + 20))
+		progress_bar.value += max(0, 20 - sqrt(distance + 20))
 		if progress_bar.value >= 100:
 			end()

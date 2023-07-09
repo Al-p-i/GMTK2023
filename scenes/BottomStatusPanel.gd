@@ -29,7 +29,7 @@ func updateIcons( problems: Array[String] ) -> void:
 			"engine_broken":
 				get_node(engineStatus).texture = ResourceLoader.load(engineTextures[1])
 				get_node(status1).texture = ResourceLoader.load(borders[2])
-			"tire_broken":
+			"flat_tire":
 				get_node(tireStatus).texture = ResourceLoader.load(tireTextures[1])
 				get_node(status3).texture = ResourceLoader.load(borders[2])
 			"rear_broken", "front_broken":
@@ -38,6 +38,16 @@ func updateIcons( problems: Array[String] ) -> void:
 			"body_dirty":
 				get_node(bodyStatus).texture = ResourceLoader.load(bodyTextures[1])
 				get_node(status5).texture = ResourceLoader.load(borders[2])
+
+func repairEverything():
+	get_node(engineStatus).texture = ResourceLoader.load(engineTextures[0])
+	get_node(status1).texture = ResourceLoader.load(borders[0])
+	get_node(status3).texture = ResourceLoader.load(borders[0])
+	get_node(status5).texture = ResourceLoader.load(borders[0])
+	get_node(status4).texture = ResourceLoader.load(borders[0])
+	get_node(tireStatus).texture = ResourceLoader.load(tireTextures[0])
+	get_node(wingStatus).texture = ResourceLoader.load(wingTextures[0])
+	get_node(bodyStatus).texture = ResourceLoader.load(bodyTextures[0])
 
 func updateFuelIcon( rotation: float ) -> void:
 	get_node(fuelPin).rotate(deg_to_rad(rotation))

@@ -1,6 +1,6 @@
 extends Node
 
-enum TOOL_TYPES { FIRE_EXTINGUISHER, SCREWDRIVER, JACK, TYRE, WIPER, FUEL }
+enum TOOL_TYPES { FIRE_EXTINGUISHER, SCREWDRIVER, JACK, TYRE, WIPER, FUEL, POMPOM, WELDER }
 var current_camera = null
 
 var selected_tool: Node2D = null

@@ -19,8 +19,9 @@
 [ext_resource type="Texture2D" uid="uid://bjjr8v3np3roj" path="res://assets/icon/icon_engine_green.png" id="11_lt5cx"]
 [ext_resource type="Texture2D" uid="uid://vcf1i8ivwjpf" path="res://assets/icon/icon_driver_green.png" id="12_ggfab"]
 
-[node name="Car Status Panel" type="Node2D"]
+[node name="Car Status Panel" type="Node2D" node_paths=PackedStringArray("tiresStatus")]
 script = ExtResource("1_ntuvn")
+tiresStatus = [NodePath("Top Car Model/Tire Status 0"), NodePath("Top Car Model/Tire Status 1"), NodePath("Top Car Model/Tire Status 2"), NodePath("Top Car Model/Tire Status 3")]
 
 [node name="Top Car Model" type="Node2D" parent="."]
 
@@ -48,6 +49,7 @@ position = Vector2(-63, -92)
 texture = ExtResource("6_8rc2h")
 
 [node name="Fuel Status" type="Sprite2D" parent="Top Car Model"]
+visible = false
 position = Vector2(-40, -67)
 texture = ExtResource("7_5oa1y")
 
