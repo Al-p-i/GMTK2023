@@ -7,7 +7,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hioxm"]
 size = Vector2(192, 117)
 
-[node name="Tyre" type="Node2D"]
+[node name="Tyre" type="Node2D" groups=["jack_updates"]]
 script = ExtResource("1_43ry6")
 
 [node name="Area2D" type="Area2D" parent="."]

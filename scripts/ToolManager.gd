@@ -7,6 +7,7 @@ extends Node2D
 var tool_cursor: Sprite2D = null
 const toolWidth = 280
 const toolGap = 30
+var is_on_jack = false
 
 var selectedToolIndex: int = -1 :
 	set(value):
@@ -111,4 +112,3 @@ func _unhandled_input(event):
 		use_animation.stop()
 		if tool_cursor:
 			tool_cursor.show()
-	

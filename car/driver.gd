@@ -22,4 +22,3 @@ func _on_area_2d_input_event(viewport, event, shape_idx):
 		else:
 			progress_bar.value -= rng.randi_range(1,10)
 			print("wrong tool selected ", Global.selected_tool)
-

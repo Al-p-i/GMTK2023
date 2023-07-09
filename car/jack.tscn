@@ -19,13 +19,6 @@ position = Vector2(94, 106)
 shape = SubResource("RectangleShape2D_mrkmm")
 debug_color = Color(0.996078, 0, 0.2, 0.419608)
 
-[node name="Label" type="Label" parent="."]
-offset_left = 70.0
-offset_top = 87.0
-offset_right = 135.0
-offset_bottom = 113.0
-text = "Jack OFF"
-
 [node name="WorkTimer" type="Timer" parent="."]
 
 [node name="UseJackOn" type="Sprite2D" parent="."]
