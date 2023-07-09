@@ -2,6 +2,7 @@ extends CarPart
 
 var isFuelConnected: bool = false
 @onready var connect_sfx = $ConnectSFX
+@onready var refuel = $Refuel
 
 func _process(delta):
 	if isFuelConnected:
@@ -15,7 +16,9 @@ func _on_area_input_event(viewport, event, shape_idx):
 		isFuelConnected = !isFuelConnected
 		
 		if isFuelConnected:
+			refuel.show()
 			connect_sfx.play()
 		if !isFuelConnected:
+			refuel.hide()
 			connect_sfx.play()
 

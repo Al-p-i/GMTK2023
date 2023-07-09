@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://bbqi8vsbqasme"]
+[gd_scene load_steps=40 format=3 uid="uid://bbqi8vsbqasme"]
 
 [ext_resource type="Script" path="res://scripts/CarController.gd" id="1_fe5xa"]
 [ext_resource type="PackedScene" uid="uid://bp2gvppdhe1hm" path="res://scenes/TyreCloseUp.tscn" id="2_kelgi"]
@@ -27,6 +27,7 @@
 [ext_resource type="Texture2D" uid="uid://dte1tfarbvva6" path="res://assets/fire_anim/fire_8.png" id="22_nutea"]
 [ext_resource type="Script" path="res://scenes/Fuel Part.gd" id="25_1uiab"]
 [ext_resource type="AudioStream" uid="uid://dr680grost11v" path="res://audio/connected.wav" id="27_cp7e4"]
+[ext_resource type="Texture2D" uid="uid://ciw7uyt7w20ie" path="res://assets/use/use_fuel_0.png" id="27_ocyy7"]
 [ext_resource type="Texture2D" uid="uid://dyha7x2pc4tqp" path="res://assets/confetti/spritesheet.png" id="27_opax8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ug712"]
@@ -266,6 +267,11 @@ anim_offset_max = 1.0
 [node name="Fuel Part" type="Sprite2D" parent="Car"]
 position = Vector2(-175, 87)
 script = ExtResource("25_1uiab")
+
+[node name="Refuel" type="Sprite2D" parent="Car/Fuel Part"]
+visible = false
+position = Vector2(51, 606)
+texture = ExtResource("27_ocyy7")
 
 [node name="Area" type="Area2D" parent="Car/Fuel Part"]
 
