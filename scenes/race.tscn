@@ -1,0 +1,282 @@
+[gd_scene load_steps=14 format=3 uid="uid://du4ssny80bnk0"]
+
+[ext_resource type="Texture2D" uid="uid://ivwhfi3je3cg" path="res://assets/view/view_race.png" id="1_b52xo"]
+[ext_resource type="Script" path="res://scenes/race.gd" id="1_l5pvk"]
+[ext_resource type="PackedScene" uid="uid://dttdti73pko4u" path="res://scenes/mini_car.tscn" id="3_jc7qe"]
+[ext_resource type="FontFile" uid="uid://nxwux10p5d40" path="res://fonts/ocraextended.ttf" id="4_sb3mg"]
+
+[sub_resource type="Curve2D" id="Curve2D_m1sqn"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1408, 792, 0, 0, 0, 0, 1484.32, 788.89, -59.7567, 50.0902, 59.7567, -50.0902, 1644, 728, 94.0289, 97.544, -94.0289, -97.544, 1563, 453, 117.756, 26.3632, -117.756, -26.3632, 937, 609, -10.9243, 89.6332, 10.9243, -89.6332, 791, 440, 74.6958, 92.2713, -74.6958, -92.2713, 849, 227, 53.007, -37.4705, -53.007, 37.4705, 371, 257, -47.4538, -180.149, 47.4538, 180.149, 234, 606, 0, 0, 0, 0, 555, 784, 0, 0, 0, 0, 785, 787, 0, 0, 0, 0, 1207, 787, 0, 0, 0, 0, 1408, 792)
+}
+point_count = 13
+
+[sub_resource type="GDScript" id="GDScript_owfst"]
+script/source = "extends CharacterBody2D
+
+@export_enum(\"red\", \"green\", \"blue\") var car_color: String
+@onready var color = $color
+var acceleration:float = 0.2
+var max_speed:float = 10
+var cornering_slow:float = 2.0
+var current_speed:float
+var current_lap:int
+
+
+func _ready():
+	color.texture = load(\"res://assets/view/mini_%s.png\" % car_color)
+
+func _process(delta):
+	if car_color == \"red\":
+		if current_speed > Global.speed:
+			Global.speed = current_speed
+"
+
+[sub_resource type="Curve2D" id="Curve2D_tbylk"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1408, 792, 0, 0, 0, 0, 1484.32, 788.89, -59.7567, 50.0902, 59.7567, -50.0902, 1644, 728, 94.0289, 97.544, -94.0289, -97.544, 1563, 453, 117.756, 26.3632, -117.756, -26.3632, 937, 609, -10.9243, 89.6332, 10.9243, -89.6332, 791, 440, 74.6958, 92.2713, -74.6958, -92.2713, 849, 227, 53.007, -37.4705, -53.007, 37.4705, 371, 257, -47.4538, -180.149, 47.4538, 180.149, 234, 606, 0, 0, 0, 0, 555, 784, 0, 0, 0, 0, 785, 787, 0, 0, 0, 0, 1207, 787, 0, 0, 0, 0, 1408, 792)
+}
+point_count = 13
+
+[sub_resource type="GDScript" id="GDScript_1yvfi"]
+script/source = "extends CharacterBody2D
+
+@export_enum(\"red\", \"green\", \"blue\") var car_color: String
+@onready var color = $color
+var acceleration:float = 0.2
+var max_speed:float = 10
+var cornering_slow:float = 2.0
+var current_speed:float
+var current_lap:int
+
+
+func _ready():
+	color.texture = load(\"res://assets/view/mini_%s.png\" % car_color)
+
+func _process(delta):
+	if car_color == \"red\":
+		if current_speed > Global.speed:
+			Global.speed = current_speed
+"
+
+[sub_resource type="Curve2D" id="Curve2D_iusar"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1408, 792, 0, 0, 0, 0, 1484.32, 788.89, -59.7567, 50.0902, 59.7567, -50.0902, 1644, 728, 94.0289, 97.544, -94.0289, -97.544, 1563, 453, 117.756, 26.3632, -117.756, -26.3632, 937, 609, -10.9243, 89.6332, 10.9243, -89.6332, 791, 440, 74.6958, 92.2713, -74.6958, -92.2713, 849, 227, 53.007, -37.4705, -53.007, 37.4705, 371, 257, -47.4538, -180.149, 47.4538, 180.149, 234, 606, 0, 0, 0, 0, 555, 784, 0, 0, 0, 0, 785, 787, 0, 0, 0, 0, 1207, 787, 0, 0, 0, 0, 1408, 792)
+}
+point_count = 13
+
+[sub_resource type="GDScript" id="GDScript_226bd"]
+script/source = "extends CharacterBody2D
+
+@export_enum(\"red\", \"green\", \"blue\") var car_color: String
+@onready var color = $color
+var acceleration:float = 0.2
+var max_speed:float = 10
+var cornering_slow:float = 2.0
+var current_speed:float
+var current_lap:int
+
+
+func _ready():
+	color.texture = load(\"res://assets/view/mini_%s.png\" % car_color)
+
+func _process(delta):
+	if car_color == \"red\":
+		if current_speed > Global.speed:
+			Global.speed = current_speed
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jpr12"]
+size = Vector2(466, 148)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mj1ky"]
+size = Vector2(37, 301.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_22oiv"]
+size = Vector2(116, 93.75)
+
+[node name="race" type="Node2D"]
+script = ExtResource("1_l5pvk")
+
+[node name="bg" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_b52xo")
+
+[node name="red track" type="Path2D" parent="."]
+position = Vector2(10, 7)
+curve = SubResource("Curve2D_m1sqn")
+
+[node name="red" type="PathFollow2D" parent="red track"]
+position = Vector2(1408, 792)
+rotation = -0.0407329
+
+[node name="mini_car" parent="red track/red" instance=ExtResource("3_jc7qe")]
+script = SubResource("GDScript_owfst")
+car_color = "red"
+
+[node name="green track" type="Path2D" parent="."]
+position = Vector2(50, 2)
+curve = SubResource("Curve2D_tbylk")
+
+[node name="green" type="PathFollow2D" parent="green track"]
+position = Vector2(1408, 792)
+rotation = -0.0407329
+scale = Vector2(1, 1)
+
+[node name="mini_car" parent="green track/green" instance=ExtResource("3_jc7qe")]
+scale = Vector2(1, 1)
+script = SubResource("GDScript_1yvfi")
+
+[node name="blue track" type="Path2D" parent="."]
+position = Vector2(-30, 10)
+curve = SubResource("Curve2D_iusar")
+
+[node name="blue" type="PathFollow2D" parent="blue track"]
+position = Vector2(1408, 792)
+rotation = -0.0407329
+
+[node name="mini_car" parent="blue track/blue" instance=ExtResource("3_jc7qe")]
+position = Vector2(0, -6.10352e-05)
+script = SubResource("GDScript_226bd")
+car_color = "blue"
+
+[node name="corner" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="corner"]
+polygon = PackedVector2Array(1580, 669, 1652, 864, 1795, 729)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="corner"]
+polygon = PackedVector2Array(1702, 407, 1512, 519, 1542, 303)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="corner"]
+polygon = PackedVector2Array(1057, 674, 954, 106, 837, 109, 627, 674)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="corner"]
+polygon = PackedVector2Array(337, 158, 437, 386, 181, 286)
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="corner"]
+polygon = PackedVector2Array(344, 647, 152, 734, 311, 852)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="corner"]
+position = Vector2(741, 909)
+shape = SubResource("RectangleShape2D_jpr12")
+
+[node name="status" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 1586.0
+offset_top = 101.0
+offset_right = 1626.0
+offset_bottom = 141.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="laps" type="HBoxContainer" parent="status"]
+layout_mode = 0
+offset_left = -68.0
+offset_top = -2.0
+offset_right = 237.0
+offset_bottom = 75.0
+alignment = 1
+
+[node name="count" type="Label" parent="status/laps"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_sb3mg")
+theme_override_font_sizes/font_size = 60
+text = "0"
+
+[node name="end" type="Label" parent="status/laps"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_sb3mg")
+theme_override_font_sizes/font_size = 35
+text = "/10"
+
+[node name="laps" type="Label" parent="status/laps"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_sb3mg")
+theme_override_font_sizes/font_size = 60
+text = "laps"
+
+[node name="place" type="VBoxContainer" parent="status"]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 66.0
+offset_right = 125.0
+offset_bottom = 179.0
+
+[node name="red" type="Label" parent="status/place"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.239216, 0.333333, 1)
+theme_override_fonts/font = ExtResource("4_sb3mg")
+theme_override_font_sizes/font_size = 30
+text = "RED"
+
+[node name="green" type="Label" parent="status/place"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.898039, 0.392157, 1)
+theme_override_fonts/font = ExtResource("4_sb3mg")
+theme_override_font_sizes/font_size = 30
+text = "GREEN"
+
+[node name="blue" type="Label" parent="status/place"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.329412, 0.686275, 1, 1)
+theme_override_fonts/font = ExtResource("4_sb3mg")
+theme_override_font_sizes/font_size = 30
+text = "BLUE"
+
+[node name="place number" type="VBoxContainer" parent="status"]
+layout_mode = 0
+offset_left = -37.0
+offset_top = 66.0
+offset_right = 125.0
+offset_bottom = 179.0
+
+[node name="1st" type="Label" parent="status/place number"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_sb3mg")
+theme_override_font_sizes/font_size = 30
+text = "1st"
+
+[node name="2nd" type="Label" parent="status/place number"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_sb3mg")
+theme_override_font_sizes/font_size = 30
+text = "2nd"
+
+[node name="3rd" type="Label" parent="status/place number"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_sb3mg")
+theme_override_font_sizes/font_size = 30
+text = "3rd"
+
+[node name="finish_line" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="finish_line"]
+position = Vector2(1165, 827.25)
+shape = SubResource("RectangleShape2D_mj1ky")
+
+[node name="pitstop" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pitstop"]
+position = Vector2(1071, 929.875)
+shape = SubResource("RectangleShape2D_22oiv")
+
+[connection signal="body_entered" from="corner" to="." method="_on_corner_body_entered"]
+[connection signal="body_entered" from="finish_line" to="." method="_on_finish_line_body_entered"]
+[connection signal="body_entered" from="pitstop" to="." method="_on_pitstop_body_entered"]
+[connection signal="body_exited" from="pitstop" to="." method="_on_pitstop_body_exited"]

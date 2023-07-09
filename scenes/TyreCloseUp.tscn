@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bp2gvppdhe1hm"]
+[gd_scene load_steps=10 format=3 uid="uid://bp2gvppdhe1hm"]
 
 [ext_resource type="Script" path="res://scenes/TyreCloseUp.gd" id="1_otm8j"]
 [ext_resource type="Texture2D" uid="uid://di8eodihm0rdq" path="res://assets/view/view_tire_worn.png" id="2_r1xoj"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://v3kv10y1px53" path="res://assets/view/bolt_hint.png" id="6_y8umg"]
 [ext_resource type="Texture2D" uid="uid://l5exbfk4ped6" path="res://assets/ui/ui_progressbar_back.png" id="7_kagx3"]
 [ext_resource type="Texture2D" uid="uid://2qy4yuc7ftqv" path="res://assets/ui/ui_progressbar_front.png" id="8_wl1u5"]
+[ext_resource type="AudioStream" uid="uid://d3hq2gceakfsp" path="res://audio/ElectricDrill_BW.19307.wav" id="9_8jp1g"]
 
 [node name="UnscrewFlatTyre" type="Node2D" groups=["tyre_close_up"]]
 script = ExtResource("1_otm8j")
@@ -46,5 +47,9 @@ offset_bottom = 464.0
 texture_under = ExtResource("7_kagx3")
 texture_progress = ExtResource("8_wl1u5")
 texture_progress_offset = Vector2(10, 10)
+
+[node name="ScrewSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_8jp1g")
+volume_db = -20.405
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

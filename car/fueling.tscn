@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://bphsypn0noqoy"]
+[gd_scene load_steps=7 format=3 uid="uid://bphsypn0noqoy"]
 
 [ext_resource type="Script" path="res://car/fueling.gd" id="1_01vby"]
 [ext_resource type="Texture2D" uid="uid://l5exbfk4ped6" path="res://assets/ui/ui_progressbar_back.png" id="2_0g4ne"]
 [ext_resource type="Texture2D" uid="uid://2qy4yuc7ftqv" path="res://assets/ui/ui_progressbar_front.png" id="3_ncxui"]
 [ext_resource type="Texture2D" uid="uid://dpio3wnv7rij8" path="res://assets/use/use_fuel.png" id="4_vn4tk"]
+[ext_resource type="AudioStream" uid="uid://dr680grost11v" path="res://audio/connected.wav" id="5_ee6rc"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_h4kxl"]
 radius = 34.0588
@@ -34,6 +35,9 @@ texture_progress_offset = Vector2(10, 10)
 visible = false
 position = Vector2(22, 217)
 texture = ExtResource("4_vn4tk")
+
+[node name="ConnectedSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_ee6rc")
 
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

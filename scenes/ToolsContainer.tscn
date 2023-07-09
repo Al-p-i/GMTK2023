@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bfdofyfu4mfbu"]
+[gd_scene load_steps=16 format=3 uid="uid://bfdofyfu4mfbu"]
 
 [ext_resource type="Script" path="res://scripts/ToolManager.gd" id="1_lph4c"]
 [ext_resource type="PackedScene" uid="uid://w5uxv8tm3a3d" path="res://scenes/BaseTool.tscn" id="1_rph1a"]
@@ -12,6 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://dc2j537265t2f" path="res://assets/tool/tool_hilight.png" id="8_6vddo"]
 [ext_resource type="Texture2D" uid="uid://isks34cpo65i" path="res://assets/tool/tool_pompom.png" id="8_ig71w"]
 [ext_resource type="Texture2D" uid="uid://70rpnhy8q03e" path="res://assets/tool/tool_welder.png" id="9_c7got"]
+[ext_resource type="AudioStream" uid="uid://7gpw2j0fyg0o" path="res://audio/equip.wav" id="13_s3ted"]
+[ext_resource type="AudioStream" uid="uid://b2m2hpu24qof6" path="res://audio/unequip.wav" id="14_mkev1"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g7ixh"]
 animations = [{
@@ -68,3 +70,9 @@ texture = ExtResource("8_6vddo")
 visible = false
 position = Vector2(92, -16)
 sprite_frames = SubResource("SpriteFrames_g7ixh")
+
+[node name="EquipSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_s3ted")
+
+[node name="UnEquipSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_mkev1")

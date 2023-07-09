@@ -3,6 +3,8 @@ extends Node2D
 @onready var progress_bar = $TextureProgressBar
 @onready var fuel_timer = $Timer
 @onready var fueling_hose = $FuelingHose
+@onready var connected_sfx = $ConnectedSFX
+@onready var disconnected_sfx = $DisconnectedSFX
 
 var hose_attached = false
 # Called when the node enters the scene tree for the first time.
@@ -31,6 +33,7 @@ func toggle_fueling():
 		fueling_hose.show()
 		progress_bar.show()
 		fuel_timer.start()
+		connected_sfx.play()
 	else:
 		fueling_hose.hide()
 		progress_bar.hide()

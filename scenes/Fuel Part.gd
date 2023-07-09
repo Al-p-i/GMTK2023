@@ -1,6 +1,7 @@
 extends CarPart
 
 var isFuelConnected: bool = false
+@onready var connect_sfx = $ConnectSFX
 
 func _process(delta):
 	if isFuelConnected:
@@ -12,3 +13,9 @@ func _process(delta):
 func _on_area_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and Global.selected_tool and Global.selected_tool.tool_type == Global.TOOL_TYPES.FUEL and event.is_pressed():
 		isFuelConnected = !isFuelConnected
+		
+		if isFuelConnected:
+			connect_sfx.play()
+		if !isFuelConnected:
+			connect_sfx.play()
+
