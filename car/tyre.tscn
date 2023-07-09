@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://b2e6x4lqeafy4"]
+[gd_scene load_steps=5 format=3 uid="uid://b2e6x4lqeafy4"]
 
 [ext_resource type="Script" path="res://car/Tyre.gd" id="1_43ry6"]
 [ext_resource type="Texture2D" uid="uid://j6qt36bw3wqg" path="res://assets/car/tire_good.png" id="2_mw0ec"]
-[ext_resource type="Texture2D" uid="uid://l5exbfk4ped6" path="res://assets/ui/ui_progressbar_back.png" id="3_dyku5"]
-[ext_resource type="Texture2D" uid="uid://2qy4yuc7ftqv" path="res://assets/ui/ui_progressbar_front.png" id="4_td4dy"]
+[ext_resource type="Texture2D" uid="uid://c5cu7c5vs5cig" path="res://assets/car/tire_bad.png" id="3_fp128"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hioxm"]
 size = Vector2(192, 117)
@@ -24,14 +23,8 @@ debug_color = Color(0.517647, 0.541176, 0.537255, 0.419608)
 position = Vector2(98, 60)
 texture = ExtResource("2_mw0ec")
 
-[node name="ProgressBar" type="TextureProgressBar" parent="."]
-visible = false
-offset_left = 36.0
-offset_top = 1.0
-offset_right = 240.0
-offset_bottom = 42.0
-texture_under = ExtResource("3_dyku5")
-texture_progress = ExtResource("4_td4dy")
-texture_progress_offset = Vector2(10, 10)
+[node name="TireBad" type="Sprite2D" parent="."]
+position = Vector2(96, 59)
+texture = ExtResource("3_fp128")
 
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

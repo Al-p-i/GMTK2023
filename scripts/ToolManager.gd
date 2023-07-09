@@ -81,6 +81,7 @@ func init_tool_cursor():
 			tool_sprite.texture = load("res://assets/use/use_wipe.png")
 		Global.TOOL_TYPES.SCREWDRIVER:
 			tool_sprite.texture = load("res://assets/use/use_screw.png")
+			tool_sprite.offset = Vector2(0,35)
 		Global.TOOL_TYPES.FIRE_EXTINGUISHER:
 			tool_sprite.texture = Global.selected_tool.sprite.texture
 			tool_sprite.offset = Vector2(0,70)
