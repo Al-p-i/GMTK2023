@@ -49,7 +49,8 @@ func _on_fire_timer_timeout():
 
 func use_fire_extinguisher():
 	var distance := get_global_mouse_position().distance_to(fire_animation.global_position)
-	progress_bar.value += max(0, 15 - sqrt(distance + 10))
+	progress_bar.value += max(0, 14 - sqrt(distance + 20))
+	fire_animation.global_position += Vector2(rng.randi_range(-20,20), rng.randi_range(-10,15))
 	fire_animation.global_scale = Vector2(1.2 - progress_bar.value/100, 1.2 - progress_bar.value/100)
 	if progress_bar.value >= 100:
 		fire_timer.stop()

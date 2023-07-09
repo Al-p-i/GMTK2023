@@ -72,7 +72,7 @@ autostart = true
 [node name="FireAnimation" type="AnimatedSprite2D" parent="."]
 position = Vector2(91, 10)
 sprite_frames = SubResource("SpriteFrames_ddlna")
-frame_progress = 0.792583
+frame_progress = 0.186773
 
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
 [connection signal="timeout" from="FireTimer" to="." method="_on_fire_timer_timeout"]
