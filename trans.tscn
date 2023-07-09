@@ -1,0 +1,81 @@
+[gd_scene load_steps=7 format=3 uid="uid://4576wr41ttcj"]
+
+[ext_resource type="Script" path="res://trans.gd" id="1_k0yqo"]
+[ext_resource type="Texture2D" uid="uid://ch3lxnv3flvx" path="res://assets/trans_wipe.png" id="2_bplvk"]
+
+[sub_resource type="Animation" id="Animation_i1q4h"]
+resource_name = "wipe_in"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("wipe:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-0.5, 1102), Vector2(-0.5, -150)]
+}
+
+[sub_resource type="Animation" id="Animation_r173k"]
+resource_name = "wipe_out"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("wipe:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-0.5, -150), Vector2(-0.5, -1402)]
+}
+
+[sub_resource type="Animation" id="Animation_cwfc1"]
+resource_name = "RESET"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("wipe:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-0.5, 1102)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_s2v3i"]
+_data = {
+"RESET": SubResource("Animation_cwfc1"),
+"wipe_in": SubResource("Animation_i1q4h"),
+"wipe_out": SubResource("Animation_r173k")
+}
+
+[node name="trans" type="CanvasLayer"]
+script = ExtResource("1_k0yqo")
+
+[node name="trans_anim" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_s2v3i")
+}
+
+[node name="wipe" type="TextureRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -960.5
+offset_top = 562.0
+offset_right = 960.5
+offset_bottom = 1952.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_bplvk")
