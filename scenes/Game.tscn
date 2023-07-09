@@ -11,7 +11,7 @@
 script = ExtResource("1_3b1kg")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 25.0
+wait_time = 5.0
 
 [node name="Bg" type="Sprite2D" parent="."]
 z_index = -5
