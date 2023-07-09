@@ -20,8 +20,8 @@ func start_unscrew():
 	
 func start_screw():
 	unscrew = false
-	view_tire_worn.show()
-	view_tire_normal.hide()
+	view_tire_worn.hide()
+	view_tire_normal.show()
 	bolt.hide()
 	progress_bar.value = 0
 	show()
