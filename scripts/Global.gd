@@ -5,6 +5,14 @@ var current_camera = null
 
 var selected_tool: Node2D = null
 
+var red_place: int = 1
+var green_place: int = 2
+var blue_place: int = 3
+
+var speed: int
+var time: int
+var point: int
+
 func _ready():
 	pass # Replace with function body.
 
