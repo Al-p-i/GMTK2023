@@ -19,7 +19,6 @@ position = Vector2(960, 540)
 texture = ExtResource("3_w0wws")
 
 [node name="Car Container" parent="." instance=ExtResource("1_qd1ne")]
-POSSIBLE_ACTIONS = Array[String](["flat_tire", "rear_broken", "front_broken", "engine_broken", "body_dirty", "driver_sad"])
 
 [node name="Tools Container" parent="." instance=ExtResource("3_vn25e")]
 position = Vector2(0, 1030)
