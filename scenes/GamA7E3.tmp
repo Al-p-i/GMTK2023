@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cqerd1vfx61hq"]
+[gd_scene load_steps=8 format=3 uid="uid://cqerd1vfx61hq"]
 
 [ext_resource type="Script" path="res://scenes/GameController.gd" id="1_3b1kg"]
 [ext_resource type="PackedScene" uid="uid://bbqi8vsbqasme" path="res://scenes/CarContainer.tscn" id="1_qd1ne"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://brshcucwws82s" path="res://assets/bg.png" id="3_w0wws"]
 [ext_resource type="PackedScene" uid="uid://cmuhaxxjwnv2t" path="res://scenes/CarStatusPanel.tscn" id="4_34sye"]
 [ext_resource type="PackedScene" uid="uid://bo1lji1pbodxn" path="res://scenes/TopTimer.tscn" id="5_5r6du"]
+[ext_resource type="PackedScene" uid="uid://bp2gvppdhe1hm" path="res://scenes/TyreCloseUp.tscn" id="6_sndnu"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_3b1kg")
@@ -29,6 +30,9 @@ position = Vector2(1760, 175)
 
 [node name="Top Timer" parent="." instance=ExtResource("5_5r6du")]
 position = Vector2(960, 100)
+
+[node name="TyreCloseUp" parent="." instance=ExtResource("6_sndnu")]
+visible = false
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="car_leave_pitstop" from="Car Container" to="." method="_on_car_container_car_leave_pitstop"]

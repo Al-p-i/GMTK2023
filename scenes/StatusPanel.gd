@@ -27,6 +27,8 @@ func brokeParts( problems: Array[String] ) -> void:
 				get_node(bodyStatus).texture = ResourceLoader.load(bodyTextures[1])
 			"engine_broken":
 				get_node(engineStatus).texture = ResourceLoader.load(engineTextures[1])
+			"driver_sad":
+				get_node(driverStatus).texture = ResourceLoader.load(driverTextures[1])
 			"flat_tire":
 				for j in range(0, tiresStatus.size()):
 					get_node(tiresStatus[j].get_path()).texture = ResourceLoader.load(tireTextures[1])

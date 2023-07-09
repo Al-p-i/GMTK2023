@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dhyobtpriu3sl"]
+[gd_scene load_steps=8 format=3 uid="uid://cpb0rdrbis2t1"]
 
 [ext_resource type="Texture2D" uid="uid://bmy01rmpyai8i" path="res://assets/result/bg_result.png" id="1_numx0"]
 [ext_resource type="Script" path="res://scenes/result.gd" id="1_t8d8s"]
@@ -63,6 +63,7 @@ texture_hover = ExtResource("2_vprkr")
 texture_disabled = ExtResource("2_vprkr")
 
 [node name="1" type="TextureRect" parent="Control"]
+layout_mode = 0
 offset_left = -226.0
 offset_top = -496.0
 offset_right = 113.0

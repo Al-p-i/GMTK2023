@@ -4,10 +4,9 @@ var isFuelConnected: bool = false
 
 func _process(delta):
 	if isFuelConnected:
-		CarContainer.carFuelAmount += 0.001
+		CarContainer.carFuelAmount += 0.1
 		if CarContainer.carFuelAmount > 100: CarContainer.carFuelAmount = 100
 		var fuelRotation: float = (CarContainer.carFuelAmount / 100.0) * 120.0
-		print(fuelRotation)
 		CarContainer.BottomStatusPanel.updateFuelIcon(fuelRotation)
 
 func _on_area_input_event(viewport, event, shape_idx):

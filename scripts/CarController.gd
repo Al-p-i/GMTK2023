@@ -24,7 +24,6 @@ var carFuelAmount: float = 100.0
 var fixedTireAmount: int = 0
 
 func carCome():
-	ToolContainer.disableTools()
 	initCarProblems()
 	moveCar(STOP_POSITION, Tween.TRANS_SINE, Tween.EASE_OUT).tween_callback(carArrive)
 
@@ -59,15 +58,14 @@ func moveCar(targetPos: Vector2, trans, ease) -> Tween:
 
 func carArrive():
 	emit_signal("car_arrive_pitstop")
-	ToolContainer.enableTools()
-	MainTimer.startTimer(20)
+	MainTimer.startTimer(30)
 
 func carLeave():
 	moveCar(LEAVE_POSITION, Tween.TRANS_SINE, Tween.EASE_IN).tween_callback(carLeaved)
 
 func carLeaved():
 	emit_signal("car_leave_pitstop")
-
+	
 func updateCarParts():
 	for i in range(0, Car.get_child_count()):
 		if selected_actions.has(Car.get_child(i).problemId):
@@ -76,4 +74,3 @@ func updateCarParts():
 func _on_top_timer_no_time_left():
 	carLeave()
 	ToolContainer.leaveTool()
-	ToolContainer.disableTools()

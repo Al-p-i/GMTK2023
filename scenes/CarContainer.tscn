@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://bbqi8vsbqasme"]
+[gd_scene load_steps=38 format=3 uid="uid://bbqi8vsbqasme"]
 
 [ext_resource type="Script" path="res://scripts/CarController.gd" id="1_fe5xa"]
 [ext_resource type="PackedScene" uid="uid://bp2gvppdhe1hm" path="res://scenes/TyreCloseUp.tscn" id="2_kelgi"]
@@ -26,6 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://bt2b2j8nmd8uc" path="res://assets/fire_anim/fire_7.png" id="21_rjw0s"]
 [ext_resource type="Texture2D" uid="uid://dte1tfarbvva6" path="res://assets/fire_anim/fire_8.png" id="22_nutea"]
 [ext_resource type="Script" path="res://scenes/Fuel Part.gd" id="25_1uiab"]
+[ext_resource type="Texture2D" uid="uid://dyha7x2pc4tqp" path="res://assets/confetti/spritesheet.png" id="27_opax8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ug712"]
 size = Vector2(124, 488)
@@ -90,6 +91,15 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p1to4"]
 size = Vector2(164, 156)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ibfld"]
+size = Vector2(1294, 1190)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ash8q"]
+particles_animation = true
+particles_anim_h_frames = 13
+particles_anim_v_frames = 1
+particles_anim_loop = true
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fjt77"]
 size = Vector2(46, 42)
@@ -234,6 +244,24 @@ problemId = "driver_sad"
 goodPart = "res://assets/car/driver_head.png"
 badPart = "res://assets/car/driver_head.png"
 
+[node name="Area" type="Area2D" parent="Car/DriverHead"]
+
+[node name="Collision" type="CollisionShape2D" parent="Car/DriverHead/Area"]
+shape = SubResource("RectangleShape2D_ibfld")
+
+[node name="Particle" type="CPUParticles2D" parent="Car/DriverHead"]
+visible = false
+material = SubResource("CanvasItemMaterial_ash8q")
+position = Vector2(0, -1000)
+amount = 120
+lifetime = 2.0
+randomness = 0.3
+texture = ExtResource("27_opax8")
+emission_shape = 3
+emission_rect_extents = Vector2(2000, 10)
+gravity = Vector2(0, 5000)
+anim_offset_max = 1.0
+
 [node name="Fuel Part" type="Sprite2D" parent="Car"]
 position = Vector2(-175, 87)
 script = ExtResource("25_1uiab")
@@ -255,6 +283,7 @@ z_index = 8
 [connection signal="input_event" from="Car/Tire 2/Area" to="Car/Tire 2" method="_on_area_input_event"]
 [connection signal="input_event" from="Car/Rear Wing/Area" to="Car/Rear Wing" method="_on_area_input_event"]
 [connection signal="input_event" from="Car/Engine Part/Area" to="Car/Engine Part" method="_on_area_input_event"]
+[connection signal="input_event" from="Car/DriverHead/Area" to="Car/DriverHead" method="_on_area_input_event"]
 [connection signal="input_event" from="Car/Fuel Part/Area" to="Car/Fuel Part" method="_on_area_input_event"]
 [connection signal="tireScrewed" from="TireCloseup" to="Car/Tire 3" method="_on_tire_closeup_tire_screwed"]
 [connection signal="tireScrewed" from="TireCloseup" to="Car/Tire 4" method="_on_tire_closeup_tire_screwed"]
