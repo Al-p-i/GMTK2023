@@ -1,9 +1,53 @@
-[gd_scene load_steps=3 format=3 uid="uid://baoqi07o2ex3l"]
+[gd_scene load_steps=13 format=3 uid="uid://baoqi07o2ex3l"]
 
 [ext_resource type="Script" path="res://car/engine.gd" id="1_fowtm"]
+[ext_resource type="Texture2D" uid="uid://488ex2fj1ht2" path="res://assets/fire_anim/fire_0.png" id="2_36pes"]
+[ext_resource type="Texture2D" uid="uid://ds2dyleudu7sy" path="res://assets/fire_anim/fire_1.png" id="3_rjobi"]
+[ext_resource type="Texture2D" uid="uid://bawt2g68sfkn" path="res://assets/fire_anim/fire_2.png" id="4_lyp7k"]
+[ext_resource type="Texture2D" uid="uid://deybjkuewava3" path="res://assets/fire_anim/fire_3.png" id="5_hmquu"]
+[ext_resource type="Texture2D" uid="uid://eq6ljj1yrdw8" path="res://assets/fire_anim/fire_4.png" id="6_03bss"]
+[ext_resource type="Texture2D" uid="uid://b007rrumqa860" path="res://assets/fire_anim/fire_5.png" id="7_6y5ag"]
+[ext_resource type="Texture2D" uid="uid://v7gk11yteslt" path="res://assets/fire_anim/fire_6.png" id="8_4pyda"]
+[ext_resource type="Texture2D" uid="uid://bt2b2j8nmd8uc" path="res://assets/fire_anim/fire_7.png" id="9_xrlbi"]
+[ext_resource type="Texture2D" uid="uid://dte1tfarbvva6" path="res://assets/fire_anim/fire_8.png" id="10_uxrca"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8qn2f"]
-size = Vector2(199, 165)
+size = Vector2(278, 253)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ddlna"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_36pes")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_rjobi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_lyp7k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_hmquu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_03bss")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_6y5ag")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_4pyda")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_xrlbi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_uxrca")
+}],
+"loop": true,
+"name": &"default",
+"speed": 20.0
+}]
 
 [node name="Engine" type="Node2D"]
 script = ExtResource("1_fowtm")
@@ -11,17 +55,24 @@ script = ExtResource("1_fowtm")
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(89.5, 72.5)
+position = Vector2(129, 72.5)
 shape = SubResource("RectangleShape2D_8qn2f")
 debug_color = Color(1, 0.0313726, 0.0392157, 0.419608)
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
 offset_left = -10.0
 offset_top = -40.0
-offset_right = 187.0
+offset_right = 185.0
 offset_bottom = -13.0
 
-[node name="ProgressTimer" type="Timer" parent="."]
+[node name="FireTimer" type="Timer" parent="."]
+wait_time = 0.25
+autostart = true
+
+[node name="FireAnimation" type="AnimatedSprite2D" parent="."]
+position = Vector2(91, 10)
+sprite_frames = SubResource("SpriteFrames_ddlna")
+frame_progress = 0.792583
 
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
-[connection signal="timeout" from="ProgressTimer" to="." method="_on_progress_timer_timeout"]
+[connection signal="timeout" from="FireTimer" to="." method="_on_fire_timer_timeout"]

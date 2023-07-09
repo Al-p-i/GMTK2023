@@ -2,6 +2,7 @@ extends Node2D
 
 @export var tools: Array[Node2D] = []
 @onready var hightlight: Sprite2D = $"Highlight"
+@onready var use_animation = $UseAnimation
 
 var tool_cursor: Sprite2D = null
 const toolWidth = 280
@@ -19,6 +20,8 @@ func _ready():
 func _process(delta):
 	if tool_cursor:
 		tool_cursor.global_position = get_global_mouse_position()
+	if use_animation:
+		use_animation.global_position = get_global_mouse_position() + Vector2(-70,50)
 	
 
 func initTools():
@@ -78,10 +81,11 @@ func init_tool_cursor():
 			tool_sprite.texture = load("res://assets/use/use_wipe.png")
 		Global.TOOL_TYPES.SCREWDRIVER:
 			tool_sprite.texture = load("res://assets/use/use_screw.png")
-		_:
-			add_child(tool_sprite)
+		Global.TOOL_TYPES.FIRE_EXTINGUISHER:
 			tool_sprite.texture = Global.selected_tool.sprite.texture
-			tool_cursor = tool_sprite
+			tool_sprite.offset = Vector2(0,70)
+		_:
+			tool_sprite.texture = Global.selected_tool.sprite.texture
 	add_child(tool_sprite)
 	tool_cursor = tool_sprite
 
@@ -89,3 +93,17 @@ func remove_tool_cursor():
 	if tool_cursor:
 		tool_cursor.queue_free()
 		tool_cursor = null
+
+func _unhandled_input(event):
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.is_pressed():
+		if Global.selected_tool and Global.selected_tool.tool_type == Global.TOOL_TYPES.FIRE_EXTINGUISHER:
+			use_animation.show()
+			use_animation.play()
+			if tool_cursor:
+				tool_cursor.hide()
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.is_released():
+		use_animation.hide()
+		use_animation.stop()
+		if tool_cursor:
+			tool_cursor.show()
+	

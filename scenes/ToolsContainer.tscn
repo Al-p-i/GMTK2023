@@ -1,13 +1,29 @@
-[gd_scene load_steps=9 format=3 uid="uid://bfdofyfu4mfbu"]
+[gd_scene load_steps=12 format=3 uid="uid://bfdofyfu4mfbu"]
 
 [ext_resource type="Script" path="res://scripts/ToolManager.gd" id="1_lph4c"]
 [ext_resource type="PackedScene" uid="uid://w5uxv8tm3a3d" path="res://scenes/BaseTool.tscn" id="1_rph1a"]
 [ext_resource type="Texture2D" uid="uid://bxnxtsxkmdpso" path="res://assets/tool/tool_fire.png" id="2_u6nxf"]
 [ext_resource type="Texture2D" uid="uid://c0cs73ub042ob" path="res://assets/tool/tool_fuel.png" id="3_c1h4k"]
 [ext_resource type="Texture2D" uid="uid://dp5bw2il6pfu4" path="res://assets/tool/tool_screw.png" id="4_j58ce"]
+[ext_resource type="Texture2D" uid="uid://c68k6akuwnb5c" path="res://assets/use/use_fire_0.png" id="4_rxw80"]
 [ext_resource type="Texture2D" uid="uid://ce6fkdk4q4yv" path="res://assets/tool/tool_tire.png" id="5_abr8i"]
+[ext_resource type="Texture2D" uid="uid://utjhtckvo2t0" path="res://assets/use/use_fire_1.png" id="5_vox1k"]
 [ext_resource type="Texture2D" uid="uid://dvo0c3mtdj2fw" path="res://assets/tool/tool_wiper.png" id="6_c7vyc"]
 [ext_resource type="Texture2D" uid="uid://dc2j537265t2f" path="res://assets/tool/tool_hilight.png" id="8_6vddo"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g7ixh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_rxw80")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_vox1k")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Tools Container" type="Node2D" node_paths=PackedStringArray("tools")]
 position = Vector2(0, 1000)
@@ -40,3 +56,8 @@ tool_sprite = ExtResource("6_c7vyc")
 z_index = -1
 position = Vector2(-999, 0)
 texture = ExtResource("8_6vddo")
+
+[node name="UseAnimation" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(92, -16)
+sprite_frames = SubResource("SpriteFrames_g7ixh")

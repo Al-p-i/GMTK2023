@@ -1,11 +1,10 @@
 extends Node2D
 
-
 @onready var progress_bar = $TextureProgressBar
 @onready var fuel_timer = $Timer
-var fueling_in_progress = false
+@onready var fueling_hose = $FuelingHose
 
-
+var hose_attached = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -27,14 +26,16 @@ func _on_area_2d_input_event(viewport, event, shape_idx):
 			print("wrong tool selected ", Global.selected_tool)
 		
 func toggle_fueling():
-	fueling_in_progress = !fueling_in_progress
-	if fueling_in_progress:
+	hose_attached = !hose_attached
+	if hose_attached:
+		fueling_hose.show()
 		progress_bar.show()
 		fuel_timer.start()
 	else:
+		fueling_hose.hide()
 		progress_bar.hide()
 		fuel_timer.stop()
 
 
 func _on_timer_timeout():
-	progress_bar.value += 5
+	progress_bar.value += 2

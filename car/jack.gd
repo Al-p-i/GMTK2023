@@ -7,6 +7,7 @@ extends Node2D
 @onready var use_jack_on = $UseJackOn
 
 var activated = false
+var progress_per_tick = 7
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -54,7 +55,7 @@ func _on_work_timer_timeout():
 
 
 func progress():
-	progress_bar.value += 10
+	progress_bar.value += progress_per_tick
 	if progress_bar.value == 100:
 		activated = true
 		label.text = "Jack ON"
