@@ -84,6 +84,10 @@ func init_tool_cursor():
 		Global.TOOL_TYPES.FIRE_EXTINGUISHER:
 			tool_sprite.texture = Global.selected_tool.sprite.texture
 			tool_sprite.offset = Vector2(0,70)
+		Global.TOOL_TYPES.JACK:
+			tool_sprite.texture = load("res://assets/use/use_jack_off.png")
+		Global.TOOL_TYPES.TYRE:
+			tool_sprite.texture = load("res://assets/car/tire_good.png")
 		_:
 			tool_sprite.texture = Global.selected_tool.sprite.texture
 	add_child(tool_sprite)

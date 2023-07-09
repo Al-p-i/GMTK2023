@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bayi6ghfhdy0c"]
+[gd_scene load_steps=7 format=3 uid="uid://bayi6ghfhdy0c"]
 
 [ext_resource type="Script" path="res://car/jack.gd" id="1_dojhx"]
 [ext_resource type="Texture2D" uid="uid://caipsj6o7a335" path="res://assets/use/use_jack_on.png" id="2_y51l3"]
 [ext_resource type="Texture2D" uid="uid://mgwtecktqy2h" path="res://assets/use/use_jack_off.png" id="3_d7uro"]
+[ext_resource type="Texture2D" uid="uid://l5exbfk4ped6" path="res://assets/ui/ui_progressbar_back.png" id="4_73adv"]
+[ext_resource type="Texture2D" uid="uid://2qy4yuc7ftqv" path="res://assets/ui/ui_progressbar_front.png" id="5_w5fh6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mrkmm"]
 size = Vector2(208, 232)
@@ -26,13 +28,6 @@ text = "Jack OFF"
 
 [node name="WorkTimer" type="Timer" parent="."]
 
-[node name="ProgressBar" type="ProgressBar" parent="."]
-visible = false
-offset_left = -10.0
-offset_top = -37.0
-offset_right = 198.0
-offset_bottom = -10.0
-
 [node name="UseJackOn" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(190, 106)
@@ -42,6 +37,16 @@ texture = ExtResource("2_y51l3")
 visible = false
 position = Vector2(138, 105)
 texture = ExtResource("3_d7uro")
+
+[node name="ProgressBar" type="TextureProgressBar" parent="."]
+visible = false
+offset_left = 71.0
+offset_top = -13.0
+offset_right = 235.0
+offset_bottom = 28.0
+texture_under = ExtResource("4_73adv")
+texture_progress = ExtResource("5_w5fh6")
+texture_progress_offset = Vector2(10, 10)
 
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
 [connection signal="timeout" from="WorkTimer" to="." method="_on_work_timer_timeout"]
