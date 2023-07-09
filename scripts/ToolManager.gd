@@ -101,6 +101,9 @@ func init_tool_cursor():
 			tool_sprite.texture = load("res://assets/use/use_jack_off.png")
 		Global.TOOL_TYPES.TYRE:
 			tool_sprite.texture = load("res://assets/car/tire_good.png")
+		Global.TOOL_TYPES.WELDER:
+			tool_sprite.texture = Global.selected_tool.sprite.texture
+			tool_sprite.offset = Vector2(0,150)
 		_:
 			tool_sprite.texture = Global.selected_tool.sprite.texture
 	add_child(tool_sprite)
